@@ -1,0 +1,29 @@
+//Mã lớp HP->	Tên học phần->	Loại học phần->	STC->	Lớp học->	Số tiết->	Giảng viên->	Ngày học->	Buổi->	Tiết->	Phòng->	Thời gian -> Tuần
+RCV10102->	Đường lối Cách mạng của Đảng Cộng Sản Việt Nam ->	Lý thuyết->	3->	16CT, 16NT->	45->	Nguyễn Sanh Châu->	Thứ Ba->	Chiều->	6 - 9->	512->	14/08/2018 -> 1
+DMS20101->	Hệ quản trị cơ sở dữ liệu->	Lý thuyết	->3->	16CT->	45 ->	Nguyễn Văn Chức->	Thứ Sáu->	Chiều->	6 - 9->	405->	17/08/2018 -> 1
+CPL20101->	Chương trình dịch->	Lý thuyết->	3->16CT->	45->	Trương Ngọc Châu->	Thứ Bảy->	Chiều->	6 - 9->	201->	18/08/2018 -> 1
+CPL20101->	Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->	Thứ Bảy->	Chiều->	6 - 9->	201->	25/08/2018 -> 2
+SYP20101->	Lập trình hệ thống->	Lý thuyết->	3	-> 16CT->	45->	Huỳnh Hữu Hưng->	Thứ Hai->	Sáng->	1 - 4->	201->	27/08/2018 -> 2
+RCV10102->	Đường lối Cách mạng của Đảng Cộng Sản Việt Nam->	Lý thuyết->	3	-> 16CT, 16NT->	45->	Nguyễn Sanh Châu->	Thứ Ba->	Chiều->	6 - 9->	512->	28/08/2018 -> 3
+SH000502->	Sinh hoạt lớp HK5->	Lý thuyết->	0->	16CT->	5->	Nguyễn Thị Vũ Thảo->	Thứ Ba->	Chiều->	10 - 10->	512	->28/08/2018 -> 3
+CPN20101->	Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Tư->	Chiều	-> 6 - 9->	403->	29/08/2018 -> 3
+PHE10522->	Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->	Phạm Văn Tiến->	Thứ Năm->	Sáng->	1 - 2->	TD5->	30/08/2018-> 3
+DMS20101->	Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3-> 	16CT->	45->	Nguyễn Văn Chức->	Thứ Sáu->	Chiều->	6 - 9->	405->	31/08/2018-> 3
+RCV10102->	Đường lối Cách mạng của Đảng Cộng Sản Việt Nam->	Lý thuyết->	3->	16CT, 16NT->	45->	Nguyễn Sanh Châu->	Thứ Ba->	Chiều->	6 - 9->	512->	04/09/2018 -> 4
+PHE10522->	Giáo dục thể chất 5->	Thực hành->	1-> 	16CT->	20->	Phạm Văn Tiến->	Thứ Năm->	Sáng->	1 - 2->	TD5->	06/09/2018 -> 4
+DMS20101->	Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45	->Nguyễn Văn Chức->	Thứ Sáu	->Chiều	->6 - 9->	405->	07/09/2018 -> 4
+CPN20101->	Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Bảy->	Sáng->	1 - 4->	403->	08/09/2018 -> 4
+CPL20101->	Chương trình dịch->	Lý thuyết->	3->	16CT->	45->	Trương Ngọc Châu->	Thứ Bảy->	Chiều->	6 - 9->	201->	08/09/2018 -> 4
+SYP20101->	Lập trình hệ thống->	Lý thuyết->	3->	16CT->	45->	Huỳnh Hữu Hưng->	Thứ Hai->	Sáng->	1 - 4->	201->	10/09/2018 -> 4
+RCV10102->	Đường lối Cách mạng của Đảng Cộng Sản Việt Nam->	Lý thuyết->	3->	16CT, 16NT->	45->	Nguyễn Sanh Châu->	Thứ Ba->	Chiều->	6 - 9->	512->	11/09/2018-> 5
+PHE10522->	Giáo dục thể chất 5	-> Thực hành->	1->	16CT->	20->	Phạm Văn Tiến->	Thứ ->Năm	Sáng->	1 - 2->	TD5->	13/09/2018-> 5
+DMS20101->	Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->	Nguyễn Văn Chức->	Thứ Sáu	->Chiều	-> 6 - 9->	405->	14/09/2018-> 5
+CPN20101->	Mạng máy tính->	Lý thuyết->	3->	16CT->	45	->Đặng Hùng Vĩ->	Thứ Bảy->	Sáng->	1 - 4->	403->	15/09/2018-> 5
+CPL20101->	Chương trình dịch->	Lý thuyết->	3->	16CT->	45	->Trương Ngọc Châu->	Thứ Bảy->	Chiều->	6 - 9->	201->	15/09/2018 -> 5
+SYP20101->	Lập trình hệ thống->	Lý thuyết->	3->	16CT->	45->	Huỳnh Hữu Hưng->	Thứ Hai->	Sáng->	1 - 4->	201->	17/09/2018 -> 5
+RCV10102->	Đường lối Cách mạng của Đảng Cộng Sản Việt Nam->	Lý thuyết->	3->	16CT, 16NT->	45->	Nguyễn Sanh Châu->	Thứ Ba->	Chiều->	6 - 9->	512->	18/09/2018 -> 6
+SH000502->	Sinh hoạt lớp HK5->	Lý thuyết->	0->	16CT->	5->	Nguyễn Thị Vũ Thảo->	Thứ Ba->	Chiều->	10 - 10->	512->	18/09/2018-> 6
+PHE10522->	Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->	Phạm Văn Tiến->	Thứ Năm->	Sáng->	1 - 2->	TD5	->20/09/2018-> 6
+DMS20101->	Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45	->Nguyễn Văn Chức->	Thứ Sáu->	Chiều->	6 - 9->	405->	21/09/2018-> 6
+CPN20101->	Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Bảy	->Sáng->	1 - 4->	403->	22/09/2018-> 6
+CPL20101->	Chương trình dịch->	Lý thuyết->	3->	16CT->	45	->Trương Ngọc Châu->	Thứ Bảy->	Chiều->	6 - 9->	201->	22/09/2018-> 6

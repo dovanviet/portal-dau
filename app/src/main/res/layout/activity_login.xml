@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lnGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lnGuide" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageLogo">
+
+        <EditText
+            android:id="@+id/edtId"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_corner_editext"
+            android:hint="mã sinh viên"
+            android:nextFocusDown="@id/edtPassword"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp" />
+
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/edtPassword"
+            android:nextFocusDown="@id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_corner_editext"
+            android:hint="mật khẩu"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp" />
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:text="Đăng nhập với: "
+                android:textSize="16dp"
+                android:layout_alignParentLeft="true" />
+
+            <com.github.angads25.toggle.widget.LabeledSwitch
+                android:id="@+id/switchStudent"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_alignParentEnd="true"
+                android:textSize="16dp"
+                app:colorBorder="#00c4a6"
+                app:colorOn="#00c4a6"
+                app:on="true"
+                app:textOff="GIẢNG VIÊN"
+                app:textOn="SINH VIÊN"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_corner_login"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="ĐĂNG NHẬP"
+            android:textSize="16dp"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

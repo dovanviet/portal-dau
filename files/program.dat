@@ -1,0 +1,11 @@
+
+//STT->	Tên chương trình đào tạo->	Mã học phần	->Tên học phần->	Loại học phần->	ĐVHT/STC	-> Học kỳ
+1->	16CT->	CPL201->	Chương trình dịch->	Bắt Buộc->	3 -> 1
+2->	16CT->	SWE201->	Công nghệ phần mềm->	Bắt Buộc->	3 -> 1
+3->	16CT->	RCV101->	Đường lối Cách mạng của Đảng Cộng Sản Việt Nam ->	Bắt Buộc->	3	-> 2
+4->	16CT->	PHE105->	Giáo dục thể chất 5	->Bắt Buộc->	1	-> 2
+5->	16CT->	DMS201->	Hệ quản trị cơ sở dữ liệu->	Bắt Buộc->	3	-> 3
+6->	16CT->	SYP201->	Lập trình hệ thống->	Bắt Buộc->	3	-> 3
+7->	16CT->	WEB201->	Lập trình Web->	Bắt Buộc->	3	-> 4
+8->	16CT->	CPN201->	Mạng máy tính->	Bắt Buộc->	3	-> 4
+9->	16CT->	SH0005->	Sinh hoạt lớp HK4->	Bắt Buộc->	0	-> 4

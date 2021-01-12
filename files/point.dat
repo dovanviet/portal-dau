@@ -1,0 +1,40 @@
+
+// STT ->	Mã học phần ->	Tên học phần->	Tín chỉ->	Loại môn học->	Điểm->	Điểm chữ->	Điểm lần 2 ->	Điểm chữ lần 2 -> học kỳ
+ 1	-> 18111CPL201->	 Chương trình dịch->	 3->	 Bắt Buộc->	 2->	 C->	->  -> 1
+ 2	-> 18111SWE201->	 Công nghệ phần mềm->	 3->	 Bắt Buộc->	 4->	 A-> ->  -> 1
+ 3	-> 18111RCV101->	 Đường lối Cách mạng của Đảng Cộng Sản Việt Nam->	 3->	 Bắt Buộc->	 2->	 C -> -> -> 1
+ 4	-> 18111PHE105->	 Giáo dục thể chất 5-> 1-> 	 Bắt Buộc->	 3	 -> B	 -> -> -> 1
+ 5	-> 18111DMS201->	 Hệ quản trị cơ sở dữ liệu->	 3->	 Bắt Buộc->	 2->	 C	 ->	-> -> 1
+ 6	-> 18111SYP201->	 Lập trình hệ thống->	 3->	 Bắt Buộc->	 2->	 C   -> -> -> 1
+ 7	-> 18111WEB201->	 Lập trình Web->	 3->	 Bắt Buộc->	 2->	 C->	 -> -> 1
+ 8	-> 18111CPN201->	 Mạng máy tính->	 3->	 Bắt Buộc->	 2->	 C->	 -> -> 1
+ 9	-> 18111SH0005->	 Sinh hoạt lớp HK1->	 0->	 Bắt Buộc->	-> -> -> -> 1
+
+//
+ 10	-> 19111WEB202	-> Công nghệ WEB	-> 3	-> Bắt Buộc->	 3->	 B-> -> 	 	 	 -> 2
+ 11	-> 19111ISD202	-> Đồ án phân tích và thiết kế hệ thống thông tin->	 3->	 Bắt Buộc->3->	 B	-> -> -> 2
+ 12	-> 19111SOT301	-> Kiểm thử phần mềm->	 3	-> Bắt Buộc->	 2->	 C	-> 	 	-> -> 2
+ 13	-> 19111MOB201->	 Lập trình di động->	 3->	 Bắt Buộc->	 2->	 C->	 ->  	  -> 2
+ 14	-> 19111AJP201->	 Lập trình Java nâng cao->	 3->	 Bắt Buộc	-> 3	-> B->	-> -> 	 	 2
+ 15	-> 19111PRW201->	 Lập trình trong windows->	 3->	 Bắt Buộc	-> 2	-> C->	-> -> 	 	 2
+ 16	-> 19111PRM301->	 Quản lý dự án	-> 3->	 Bắt Buộc->	 4	-> A	-> 	 -> ->	2
+
+//
+17	-> 17111DTS201->	 Cấu trúc dữ liệu->	 3->	 Bắt Buộc->	 2->	 C	-> 	 -> ->	 3
+ 18	-> 17111PHE103->	 Giáo dục thể chất 3-> 1->	 	 Bắt Buộc->	 3->	 B->	-> -> 3	 	 
+ 19	-> 17111ELE101->	 Kĩ thuật điện tử->	 2->	 Bắt Buộc->	 2->	 C	 ->	 	-> -> 3
+ 20	-> 17111COS201->	 Kiến trúc máy tính->	 3->	 Bắt Buộc->	 3->	 B	-> 	 -> ->3	 
+ 21	-> 17111OOP201->	 Lập trình hướng đối tượng->	 3->	 Bắt Buộc->	 2->	 C->	 3->	 B-> 3
+ 22	-> 17111SH0003->	 Sinh hoạt lớp HK3->	 0->	 Bắt Buộc->	-> -> -> -> 3
+ 23	-> 17111GNE103->	 Tiếng anh cơ bản 3	-> 2->	 Bắt Buộc->	 1->	 D->	-> -> 	 	 3
+ 24	-> 17111DCM201->	 Toán rời rạc	-> 3->	 Bắt Buộc->	 3	-> B	-> 	 -> ->	 3
+ 25	-> 17111PMS102->	 Xác suất và Thống kê->	 2->	 Bắt Buộc->	 2->	 C	-> 	-> -> 	 3
+ //
+ 26->	 18211SYP202->	 Đồ án lập trình hệ thống->	 3	-> 	 Bắt Buộc->	 1->	 D-> -> ->	4 	 	 
+ 27->	 18211ISD201->	 Phân tích và thiết kế hệ thống thông tin->	 3->	 Bắt Buộc->	 2->	 C	-> ->	-> 	 	 4	 
+ 28->	 18211SH0006->	 Sinh hoạt lớp HK4->	 0->	 Bắt Buộc	->	-> -> -> -> 4
+ 29->	 18211OOD201->	 Thiết kế hệ thống hướng đối tượng->	 3	-> Bắt Buộc	-> 3	-> B->	-> ->	 	 	 4
+ 30->	 18211PRT201->	 Thực tập nghề nghiệp->	 2->	 Bắt Buộc->	 4->	 A	-> 	 -> ->		 4
+ 31->	 18211ENG201->	 Tiếng Anh chuyên ngành công nghệ thông tin->	 2->	 Bắt Buộc->	 3 ->	 B-> -> ->		 	 	 4
+ 32->	 18211AFI201->	 Trí tuệ nhân tạo->	 3->	 Bắt Buộc->	 2->	 C	-> 	 ->  ->		4
+ 33->	 18211MIP201->	 Vi xử lý->	 3	-> Bắt Buộc->	 1->	 D->	 2->	 C	->	 4

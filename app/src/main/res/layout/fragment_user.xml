@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AliceBlue"
+    tools:context=".UserFragment">
+
+    <RelativeLayout
+        android:id="@+id/relative_top_user"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_top_user">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/custom_logo"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/logo" />
+
+
+        <TextView
+            android:id="@+id/tv_name_user"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/img_logo"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Đỗ Văn Việt"
+            android:textColor="@color/Azure"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_masv_user"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@id/tv_name_user"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/img_logo"
+            android:gravity="center_vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="1651220023"
+            android:textColor="@color/Azure"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative_top_user"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="10"
+        app:cardBackgroundColor="@color/White"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

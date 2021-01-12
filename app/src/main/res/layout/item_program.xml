@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/tv_it_program_nameHp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="Giải tích 1"
+            android:textColor="@color/MediumSeaGreen"
+            android:gravity="center_vertical"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_it_program_typeHp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:text="Bắt buộc"
+            android:gravity="center_vertical"
+            android:textColor="@color/MediumSeaGreen"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_it_program_so_tin_chi"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@id/tv_it_program_typeHp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="3 tín chỉ"
+            android:textColor="@color/RoyalBlue"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_it_program_codeHp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@id/tv_it_program_nameHp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="CAL101"
+            android:textColor="@color/RoyalBlue"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

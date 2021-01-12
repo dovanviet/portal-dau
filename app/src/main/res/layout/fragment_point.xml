@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:layout_marginBottom="50dp"
+    tools:context=".ScheduleFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/relative_point_top"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/CornflowerBlue">
+
+        <TextView
+            android:id="@+id/tv_point_dtb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_point_stc_fail"
+            android:layout_marginLeft="10dp"
+            android:text="Điểm trung bình: "
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_point_stc_fail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tv_point_hocluc"
+            android:layout_marginLeft="10dp"
+            android:text="Số tín chỉ rớt: 0"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_point_hocluc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Học lực: Không xếp loại"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ln_center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/relative_point_top"
+        android:background="@drawable/custom_point_semester"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/img_point_sub_semester"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/sub_semester"
+            android:text="Học kỳ" />
+
+        <TextView
+            android:id="@+id/tv_point_name_semester"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:text="Học kỳ 1"
+            android:textColor="@color/LightCoral"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_point_plus_semester"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/plus_semester"
+            android:text="Học kỳ"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_point"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ln_center"
+        android:layout_marginTop="4dp"
+        android:paddingTop="10dp" />
+
+</RelativeLayout>
