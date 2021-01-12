@@ -4,81 +4,74 @@ import android.content.Context;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.daumobile.Constant.Constants;
+import com.example.daumobile.Model.User;
 import com.example.daumobile.Model.authen.Login;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class FirebaseManager {
+    private static final String TAG = "__FirebaseManager";
     private static FirebaseManager mInstance = null;
     private Context mContext;
     private FirebaseDatabase mDatabase;
 
     private DatabaseReference mUserFref;
 
-    private static final String TAG = "__FirebaseManager";
+    private MutableLiveData<List<Login>> mUserData;
+
+    public MutableLiveData<List<Login>> getUserData() {
+        return mUserData;
+    }
 
     private FirebaseManager(Context context) {
-        Log.d(TAG, "FirebaseManager: ");
         mContext = context;
+        mUserData = new MutableLiveData<>();
 
         mDatabase = FirebaseDatabase.getInstance();
         mUserFref = mDatabase.getReference("users");
 
-        mUserFref.setValue("Hello all");
-
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("hello world");
-//        initData();
+        onListenUserValue();
     }
 
     public static FirebaseManager getInstance(Context context) {
-        Log.d(TAG, "getInstance: ");
         if (mInstance == null){
             mInstance = new FirebaseManager(context);
         }
         return mInstance;
     }
 
-    public void initData() {
-        Log.d(TAG, "initData: ");
-        Login loginSinhVien = new Login("1651220023","dovanviet", Constants.SINH_VIEN);
-        Login loginGiangVien = new Login("admin","admin", Constants.GIANG_VIEN);
+    private void onListenUserValue() {
+        mUserFref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Login> results = new ArrayList<>();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    results.add(postSnapshot.getValue(Login.class));
+                }
+                mUserData.postValue(results);
+            }
 
-        mUserFref.child(loginSinhVien.getId()).push().setValue(loginSinhVien);
-//        .addOnSuccessListener(new OnSuccessListener<Void>() {
-//            @Override
-//            public void onSuccess(Void aVoid) {
-//                Log.d(TAG, "onSuccess: add student success");
-//            }
-//        })
-//        .addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//                Log.d(TAG, "onSuccess: add student fail with error = " + e.getLocalizedMessage());
-//            }
-//        });
-        mUserFref.push().child(loginGiangVien.getId()).push().setValue(loginGiangVien);
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void aVoid) {
-//                        Log.d(TAG, "onSuccess: add giang vien success");
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Log.d(TAG, "onSuccess: add giang vien fail with error = " + e.getLocalizedMessage());
-//                    }
-//                });
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w(TAG, "loadPost:onCancelled", error.toException());
+            }
+        });
     }
+
 
 }

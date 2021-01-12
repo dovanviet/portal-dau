@@ -1,6 +1,12 @@
 package com.example.daumobile.Model.authen;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import com.google.firebase.database.IgnoreExtraProperties;
+
+import java.util.Objects;
 
 @IgnoreExtraProperties
 public class Login {
@@ -48,5 +54,21 @@ public class Login {
         this.id = id;
         this.password = password;
         this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Login login = (Login) o;
+        return type == login.type &&
+                id.equals(login.id) &&
+                password.equals(login.password);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, password, type);
     }
 }
