@@ -6,8 +6,11 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.daumobile.Constant.Constants;
-import com.example.daumobile.Model.authen.Login;
+import com.example.daumobile.Model.Schedule;
+import com.example.daumobile.Model.authen.PEOPLE_TYPE;
+import com.example.daumobile.Model.authen.People;
 import com.example.daumobile.database.FirebaseManager;
+import com.example.daumobile.ui.admin.AdminActivity;
 import com.example.daumobile.ui.base.BaseActivity;
 import com.example.daumobile.ui.home.HomeActivity;
 
@@ -20,7 +23,7 @@ public class LoginActivity extends BaseActivity {
     private com.example.daumobile.databinding.ActivityLoginBinding binding;
     private FirebaseManager mFirebaseManager;
 
-    private List<Login> mListLogin = new ArrayList<>();
+    private List<People> mPeople = new ArrayList<>();
     private Boolean isStudent = true;
 
     @Override
@@ -30,7 +33,22 @@ public class LoginActivity extends BaseActivity {
         setContentView(binding.getRoot());
         mFirebaseManager = FirebaseManager.getInstance(this);
 
+//        Schedule schedule = new Schedule("HP1", "ABC T", "LOAI", 1,"16CT",3,"admin", "thu 2", 100111, "chieu", "6 - 9");
+//        mFirebaseManager.createSchedule(schedule);
+
         setListeners();
+    }
+
+    public People findUser(String id, String password, int level) {
+        if (id.equals("admin") && password.equals("admin")){
+            return new People("admin", "admin");
+        }
+        for(People people : mPeople) {
+            if (people.getId().equals(id) && people.getPassword().equals(password) && people.getType() == level){
+                return people;
+            }
+        }
+        return null;
     }
 
     public void setListeners(){
@@ -38,19 +56,33 @@ public class LoginActivity extends BaseActivity {
 
             String id = binding.edtId.getText().toString();
             String password = binding.edtPassword.getText().toString();
-            int level = Constants.SINH_VIEN;
+            int level = PEOPLE_TYPE.STUDENT.getValue();
 
-            if (!isStudent){
-                level = Constants.GIANG_VIEN;
+            if (!isStudent) {
+                level = PEOPLE_TYPE.TEACHER.getValue();
             }
 
-            Login loginNow = new Login(id, password, level);
+            People peopleFound = findUser(id, password, level);
+            if (id.isEmpty()) {
+                Toast.makeText(this, "Vui lòng nhập id", Toast.LENGTH_SHORT).show();
+                binding.edtId.requestFocus();
+            } else if (password.isEmpty()) {
+                Toast.makeText(this, "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show();
+                binding.edtPassword.requestFocus();
+            } else if (peopleFound != null) {
 
-            if (mListLogin.contains(loginNow)) {
-                Intent intent = new Intent(this, HomeActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                if (peopleFound.getId().equals("admin")) {
+                    Intent intent = new Intent(this, AdminActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                startActivity(intent);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(this, HomeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra(Constants.IT_PEOPLE, peopleFound);
+
+                    startActivity(intent);
+                }
             } else {
                 Toast.makeText(this, "Sai tài khoản hoặc mật khẩu, vui lòng đăng nhập lại", Toast.LENGTH_SHORT).show();
             }
@@ -67,11 +99,9 @@ public class LoginActivity extends BaseActivity {
         });
 
         mFirebaseManager.getUserData().observe(this, logins -> {
-            mListLogin = logins;
+            mPeople = logins;
 
             Log.d(TAG, "setListeners: " + logins);
         });
-
-
     }
 }

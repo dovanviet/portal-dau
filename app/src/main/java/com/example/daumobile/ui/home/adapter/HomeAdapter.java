@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.daumobile.Model.home.HomeItem;
 import com.example.daumobile.R;
+import com.example.daumobile.callbacks.IListenerItemClicked;
 import com.example.daumobile.databinding.ItemHomeBinding;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.List;
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     private List<HomeItem> mCurrentList;
-    private Context mContext;
+    private IListenerItemClicked mListener;
 
     private HomeItem getItem(int position) {
         return mCurrentList.get(position);
@@ -35,9 +36,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public HomeAdapter(@NonNull Context context, @NonNull List<HomeItem> listItem) {
+    public HomeAdapter(@NonNull List<HomeItem> listItem, @NonNull IListenerItemClicked listener) {
         mCurrentList = listItem;
-        mContext = context;
+        mListener = listener;
     }
 
     @NonNull
@@ -63,7 +64,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             binding = itemHomeBinding;
 
             binding.getRoot().setOnClickListener(v -> {
-                Toast.makeText(binding.getRoot().getContext(), "Clicked " + getItem(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                mListener.onItemClicked(getItem(getAdapterPosition()));
+                Toast.makeText(binding.getRoot().getContext(), "Clicked " + getItem(getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
             });
         }
 

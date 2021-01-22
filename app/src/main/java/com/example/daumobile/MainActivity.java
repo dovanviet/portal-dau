@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Fragment fragment;
         switch (item.getItemId()) {
             case R.id.nav_calendar:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new ScheduleFragment()).commit();
+//                getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new ScheduleFragment()).commit();
                 return true;
             case R.id.nav_chart:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new ChartFragment()).commit();

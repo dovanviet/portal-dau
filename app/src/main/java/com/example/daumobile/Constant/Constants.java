@@ -25,8 +25,9 @@ public class Constants {
     public static final String PATH_FILE_SCHEDULE = "schedule.dat";
     public static final String PATH_FILE_USER = "user.dat";
 
+    public static final String IT_PEOPLE = "IT_PEOPLE";
 
     //authen
-    public static final int GIANG_VIEN = 0;
-    public static final int SINH_VIEN = 1;
+//    public static final int GIANG_VIEN = 0;
+//    public static final int SINH_VIEN = 1;
 }

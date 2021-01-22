@@ -40,8 +40,11 @@
             android:layout_height="40dp"
             android:background="@drawable/bg_corner_editext"
             android:hint="mã sinh viên"
+            android:singleLine="true"
             android:nextFocusDown="@id/edtPassword"
+            android:imeOptions="actionNext"
             android:paddingStart="10dp"
+            android:nextFocusForward="@id/edtPassword"
             android:paddingEnd="10dp" />
 
         <EditText
@@ -49,8 +52,11 @@
             android:id="@+id/edtPassword"
             android:nextFocusDown="@id/btnLogin"
             android:layout_width="match_parent"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
+            android:nextFocusForward="@id/btnLogin"
             android:background="@drawable/bg_corner_editext"
             android:hint="mật khẩu"
             android:paddingStart="10dp"

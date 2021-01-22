@@ -1,112 +1,49 @@
 package com.example.daumobile.Model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+public class Schedule {
+    String maHP;
+    String tenHP;
+    String loaiHP;
+    int soTinChi;
+    String lopHoc;
+    int soTiet;
+    String idGiangVien;
+    String thoiGianDayTrongTuan;
+    int thoiGian;
+    String buoi;
+    String tiet;
+    boolean tamdung;
 
-import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
-import io.realm.annotations.RealmField;
-
-public class Schedule extends RealmObject {
-    @PrimaryKey
-    @RealmField(name = "id_schema")
-    @SerializedName("id_schema")
-    @Expose
-    private int idSchema;
-    @RealmField(name = "ma_lop_hp")
-    @SerializedName("ma_lop_hp")
-    @Expose
-    private String maLopHp;
-    @RealmField(name = "ten_hp")
-    @SerializedName("ten_hp")
-    @Expose
-    private String tenHp;
-    @RealmField(name = "loai_hp")
-    @SerializedName("loai_hp")
-    @Expose
-    private String loaiHp;
-    @RealmField(name = "stc")
-    @SerializedName("stc")
-    @Expose
-    private int stc;
-    @RealmField(name = "lop_hoc")
-    @SerializedName("lop_hoc")
-    @Expose
-    private String lopHoc;
-    @RealmField(name = "so_tiet")
-    @SerializedName("so_tiet")
-    @Expose
-    private int soTiet;
-    @RealmField(name = "giang_vien")
-    @SerializedName("giang_vien")
-    @Expose
-    private String giangVien;
-    @RealmField(name = "ngay_hoc")
-    @SerializedName("ngay_hoc")
-    @Expose
-    private String ngayHoc;
-    @RealmField(name = "buoi")
-    @SerializedName("buoi")
-    @Expose
-    private String buoi;
-    @RealmField(name = "tiet")
-    @SerializedName("tiet")
-    @Expose
-    private String tiet;
-    @RealmField(name = "phong")
-    @SerializedName("phong")
-    @Expose
-    private String phong;
-    @RealmField(name = "thoi_gian")
-    @SerializedName("thoi_gian")
-    @Expose
-    private String thoiGian;
-    @RealmField(name = "tuan")
-    @SerializedName("tuan")
-    @Expose
-    private int tuan;
-
-    public Schedule() {
+    public String getMaHP() {
+        return maHP;
     }
 
-    public int getIdSchema() {
-        return idSchema;
+    public void setMaHP(String maHP) {
+        this.maHP = maHP;
     }
 
-    public void setIdSchema(int idSchema) {
-        this.idSchema = idSchema;
+    public String getTenHP() {
+        return tenHP;
     }
 
-    public String getMaLopHp() {
-        return maLopHp;
+    public void setTenHP(String tenHP) {
+        this.tenHP = tenHP;
     }
 
-    public void setMaLopHp(String maLopHp) {
-        this.maLopHp = maLopHp;
+    public String getLoaiHP() {
+        return loaiHP;
     }
 
-    public String getTenHp() {
-        return tenHp;
+    public void setLoaiHP(String loaiHP) {
+        this.loaiHP = loaiHP;
     }
 
-    public void setTenHp(String tenHp) {
-        this.tenHp = tenHp;
+    public int getSoTinChi() {
+        return soTinChi;
     }
 
-    public String getLoaiHp() {
-        return loaiHp;
-    }
-
-    public void setLoaiHp(String loaiHp) {
-        this.loaiHp = loaiHp;
-    }
-
-    public int getStc() {
-        return stc;
-    }
-
-    public void setStc(int stc) {
-        this.stc = stc;
+    public void setSoTinChi(int soTinChi) {
+        this.soTinChi = soTinChi;
     }
 
     public String getLopHoc() {
@@ -125,20 +62,28 @@ public class Schedule extends RealmObject {
         this.soTiet = soTiet;
     }
 
-    public String getGiangVien() {
-        return giangVien;
+    public String getIdGiangVien() {
+        return idGiangVien;
     }
 
-    public void setGiangVien(String giangVien) {
-        this.giangVien = giangVien;
+    public void setIdGiangVien(String idGiangVien) {
+        this.idGiangVien = idGiangVien;
     }
 
-    public String getNgayHoc() {
-        return ngayHoc;
+    public String getThoiGianDayTrongTuan() {
+        return thoiGianDayTrongTuan;
     }
 
-    public void setNgayHoc(String ngayHoc) {
-        this.ngayHoc = ngayHoc;
+    public void setThoiGianDayTrongTuan(String thoiGianDayTrongTuan) {
+        this.thoiGianDayTrongTuan = thoiGianDayTrongTuan;
+    }
+
+    public int getThoiGian() {
+        return thoiGian;
+    }
+
+    public void setThoiGian(int thoiGian) {
+        this.thoiGian = thoiGian;
     }
 
     public String getBuoi() {
@@ -157,28 +102,44 @@ public class Schedule extends RealmObject {
         this.tiet = tiet;
     }
 
-    public String getPhong() {
-        return phong;
+    public boolean isTamdung() {
+        return tamdung;
     }
 
-    public void setPhong(String phong) {
-        this.phong = phong;
+    public void setTamdung(boolean tamdung) {
+        this.tamdung = tamdung;
     }
 
-    public String getThoiGian() {
-        return thoiGian;
-    }
-
-    public void setThoiGian(String thoiGian) {
+    public Schedule(String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String idGiangVien, String thoiGianDayTrongTuan, int thoiGian, String buoi, String tiet) {
+        this.maHP = maHP;
+        this.tenHP = tenHP;
+        this.loaiHP = loaiHP;
+        this.soTinChi = soTinChi;
+        this.lopHoc = lopHoc;
+        this.soTiet = soTiet;
+        this.idGiangVien = idGiangVien;
+        this.thoiGianDayTrongTuan = thoiGianDayTrongTuan;
         this.thoiGian = thoiGian;
+        this.buoi = buoi;
+        this.tiet = tiet;
+        this.tamdung = false;
     }
 
-    public int getTuan() {
-        return tuan;
+    public Schedule(String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String idGiangVien, String thoiGianDayTrongTuan, int thoiGian, String buoi, String tiet, boolean tamdung) {
+        this.maHP = maHP;
+        this.tenHP = tenHP;
+        this.loaiHP = loaiHP;
+        this.soTinChi = soTinChi;
+        this.lopHoc = lopHoc;
+        this.soTiet = soTiet;
+        this.idGiangVien = idGiangVien;
+        this.thoiGianDayTrongTuan = thoiGianDayTrongTuan;
+        this.thoiGian = thoiGian;
+        this.buoi = buoi;
+        this.tiet = tiet;
+        this.tamdung = tamdung;
     }
 
-    public void setTuan(int tuan) {
-        this.tuan = tuan;
+    public Schedule() {
     }
-
 }

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_marginBottom="50dp"
     android:background="@color/White"
-    tools:context=".ScheduleFragment">
+    >
 
     <RelativeLayout
         android:id="@+id/relative_schedule_top"
