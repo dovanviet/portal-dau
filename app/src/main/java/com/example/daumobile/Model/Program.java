@@ -1,109 +1,79 @@
 package com.example.daumobile.Model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import java.util.Objects;
 
-import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
-import io.realm.annotations.RealmField;
+public class Program {
+    String tenChuongTrinh;
+    String maHP;
+    String tenHP;
+    String loaiHP;
+    int soTinChi;
 
-public class Program extends RealmObject {
-    @RealmField(name = "id_program")
-    @PrimaryKey
-    @SerializedName("id_program")
-    @Expose
-    private int idProgram;
-    @RealmField(name = "ten_chuong_trinh_dao_tao")
-    @SerializedName("ten_chuong_trinh_dao_tao")
-    @Expose
-    private String tenChuongTrinhDaoTao;
-    @RealmField(name = "ma_hp")
-    @SerializedName("ma_hp")
-    @Expose
-    private String maHp;
-    @RealmField(name = "ten_hp")
-    @SerializedName("ten_hp")
-    @Expose
-    private String tenHp;
-    @RealmField(name = "loai_hp")
-    @SerializedName("loai_hp")
-    @Expose
-    private boolean loaiHp;
-    @RealmField(name = "stc")
-    @SerializedName("stc")
-    @Expose
-    private int stc;
-    @RealmField(name = "hoc_ky")
-    @SerializedName("hoc_ky")
-    @Expose
-    private int hocKy;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Program program = (Program) o;
+        return soTinChi == program.soTinChi &&
+                Objects.equals(tenChuongTrinh, program.tenChuongTrinh) &&
+                Objects.equals(maHP, program.maHP) &&
+                Objects.equals(tenHP, program.tenHP) &&
+                Objects.equals(loaiHP, program.loaiHP);
+    }
 
-    public Program(int idProgram, String tenChuongTrinhDaoTao, String maHp, String tenHp, boolean loaiHp, int stc, int hocKy) {
-        this.idProgram = idProgram;
-        this.tenChuongTrinhDaoTao = tenChuongTrinhDaoTao;
-        this.maHp = maHp;
-        this.tenHp = tenHp;
-        this.loaiHp = loaiHp;
-        this.stc = stc;
-        this.hocKy = hocKy;
+    @Override
+    public int hashCode() {
+        return Objects.hash(tenChuongTrinh, maHP, tenHP, loaiHP, soTinChi);
+    }
+
+    public String getTenChuongTrinh() {
+        return tenChuongTrinh;
+    }
+
+    public void setTenChuongTrinh(String tenChuongTrinh) {
+        this.tenChuongTrinh = tenChuongTrinh;
+    }
+
+    public String getMaHP() {
+        return maHP;
+    }
+
+    public void setMaHP(String maHP) {
+        this.maHP = maHP;
+    }
+
+    public String getTenHP() {
+        return tenHP;
+    }
+
+    public void setTenHP(String tenHP) {
+        this.tenHP = tenHP;
+    }
+
+    public String getLoaiHP() {
+        return loaiHP;
+    }
+
+    public void setLoaiHP(String loaiHP) {
+        this.loaiHP = loaiHP;
+    }
+
+    public int getSoTinChi() {
+        return soTinChi;
+    }
+
+    public void setSoTinChi(int soTinChi) {
+        this.soTinChi = soTinChi;
     }
 
     public Program() {
     }
 
-    public int getIdProgram() {
-        return idProgram;
-    }
-
-    public void setIdProgram(int idProgram) {
-        this.idProgram = idProgram;
-    }
-
-    public String getTenChuongTrinhDaoTao() {
-        return tenChuongTrinhDaoTao;
-    }
-
-    public void setTenChuongTrinhDaoTao(String tenChuongTrinhDaoTao) {
-        this.tenChuongTrinhDaoTao = tenChuongTrinhDaoTao;
-    }
-
-    public String getMaHp() {
-        return maHp;
-    }
-
-    public void setMaHp(String maHp) {
-        this.maHp = maHp;
-    }
-
-    public boolean isLoaiHp() {
-        return loaiHp;
-    }
-
-    public void setLoaiHp(boolean loaiHp) {
-        this.loaiHp = loaiHp;
-    }
-
-    public int getStc() {
-        return stc;
-    }
-
-    public void setStc(int stc) {
-        this.stc = stc;
-    }
-
-    public int getHocKy() {
-        return hocKy;
-    }
-
-    public void setHocKy(int hocKy) {
-        this.hocKy = hocKy;
-    }
-
-    public String getTenHp() {
-        return tenHp;
-    }
-
-    public void setTenHp(String tenHp) {
-        this.tenHp = tenHp;
+    public Program(String tenChuongTrinh, String maHP, String tenHP, String loaiHP, int soTinChi) {
+        this.tenChuongTrinh = tenChuongTrinh;
+        this.maHP = maHP;
+        this.tenHP = tenHP;
+        this.loaiHP = loaiHP;
+        this.soTinChi = soTinChi;
     }
 }

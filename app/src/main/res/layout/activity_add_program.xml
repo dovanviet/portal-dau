@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.admin.detail.AddProgramActivity">
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.admin.detail.AddProgramActivity">
+
+        <EditText
+            android:hint="Tên Chương Trình"
+            android:id="@+id/edtTenChuongTrinh"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+        <EditText
+            android:hint="Mã Học Phần"
+            android:id="@+id/edtMaHP"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+        <EditText
+            android:hint="Tên Học Phần"
+            android:id="@+id/edtTenHP"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+        <EditText
+            android:hint="Loai Học Phần"
+            android:id="@+id/edtLoaiHP"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+        <EditText
+            android:hint="Số tín chỉ"
+            android:id="@+id/edtSoTinChi"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:layout_height="60dp">
+            <Button
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_corner_home"
+                android:id="@+id/btnCancel"
+                android:text="Hủy bỏ"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <Button
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_corner_home"
+                android:id="@+id/btnAccept"
+                android:text="Xác nhận"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

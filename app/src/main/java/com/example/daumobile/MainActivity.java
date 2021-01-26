@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 //                getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new ScheduleFragment()).commit();
                 return true;
             case R.id.nav_chart:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new ChartFragment()).commit();
+//                getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new ChartFragment()).commit();
                 return true;
             case R.id.nav_point:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new PointFragment()).commit();
+//                getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new PointFragment()).commit();
                 return true;
             case R.id.nav_program:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new ProgramFragment()).commit();
+//                getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new ProgramFragment()).commit();
                 return true;
             case R.id.nav_user:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frm_container, new UserFragment()).commit();
