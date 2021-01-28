@@ -1,4 +1,4 @@
-package com.example.daumobile.Model;
+package com.example.daumobile.model;
 
 import java.util.Objects;
 

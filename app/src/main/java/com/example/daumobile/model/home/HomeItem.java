@@ -1,4 +1,4 @@
-package com.example.daumobile.Model.home;
+package com.example.daumobile.model.home;
 
 import androidx.annotation.DrawableRes;
 

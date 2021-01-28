@@ -1,24 +1,19 @@
 package com.example.daumobile.ui.home;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.daumobile.Constant.Constants;
-import com.example.daumobile.Model.authen.PEOPLE_TYPE;
-import com.example.daumobile.Model.authen.People;
-import com.example.daumobile.Model.home.HomeItem;
+import com.example.daumobile.database.Constants;
+import com.example.daumobile.model.authen.PEOPLE_TYPE;
+import com.example.daumobile.model.authen.People;
+import com.example.daumobile.model.home.HomeItem;
 import com.example.daumobile.R;
 import com.example.daumobile.callbacks.IListenerItemClicked;
-import com.example.daumobile.database.FirebaseManager;
-import com.example.daumobile.ui.admin.AdminActivity;
 import com.example.daumobile.ui.base.BaseActivity;
 import com.example.daumobile.ui.home.adapter.HomeAdapter;
 import com.example.daumobile.ui.login.LoginActivity;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.Serializable;
 import java.util.ArrayList;

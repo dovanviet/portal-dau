@@ -1,4 +1,4 @@
-package com.example.daumobile.Constant;
+package com.example.daumobile.database;
 
 public class Constants {
     public static final String PROGRAM_TY_BATBUOC = "Bắt buộc";

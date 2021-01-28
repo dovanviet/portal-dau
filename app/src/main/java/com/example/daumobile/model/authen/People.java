@@ -1,4 +1,4 @@
-package com.example.daumobile.Model.authen;
+package com.example.daumobile.model.authen;
 
 import java.io.Serializable;
 import java.util.Objects;

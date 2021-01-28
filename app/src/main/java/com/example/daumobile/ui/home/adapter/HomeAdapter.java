@@ -1,9 +1,6 @@
 package com.example.daumobile.ui.home.adapter;
 
-import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -11,13 +8,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.daumobile.Model.home.HomeItem;
-import com.example.daumobile.R;
+import com.example.daumobile.model.home.HomeItem;
 import com.example.daumobile.callbacks.IListenerItemClicked;
 import com.example.daumobile.databinding.ItemHomeBinding;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {

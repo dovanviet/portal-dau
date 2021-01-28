@@ -1,4 +1,4 @@
-package com.example.daumobile.Utils;
+package com.example.daumobile.utils;
 
 import android.content.Context;
 

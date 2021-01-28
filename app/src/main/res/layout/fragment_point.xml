@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/White"
-    android:layout_marginBottom="50dp"
-    tools:context=".ScheduleFragment">
+    >
 
 
     <RelativeLayout
@@ -87,7 +86,6 @@
             android:src="@drawable/plus_semester"
             android:text="Học kỳ"
             android:textSize="15sp" />
-
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView

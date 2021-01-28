@@ -6,10 +6,10 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.daumobile.Model.Schedule;
-import com.example.daumobile.Model.authen.People;
-import com.example.daumobile.Model.authen.Student;
-import com.example.daumobile.Model.authen.Teacher;
+import com.example.daumobile.model.Schedule;
+import com.example.daumobile.model.authen.People;
+import com.example.daumobile.model.authen.Student;
+import com.example.daumobile.model.authen.Teacher;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

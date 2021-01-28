@@ -1,10 +1,7 @@
-package com.example.daumobile.Controller;
+package com.example.daumobile.utils;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
