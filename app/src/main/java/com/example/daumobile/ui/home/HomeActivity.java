@@ -1,11 +1,14 @@
 package com.example.daumobile.ui.home;
 
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 
 import com.example.daumobile.database.Constants;
+import com.example.daumobile.databinding.ActivityHomeBinding;
 import com.example.daumobile.model.authen.PEOPLE_TYPE;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.home.HomeItem;
@@ -19,13 +22,23 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends BaseActivity implements IListenerItemClicked {
+public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements IListenerItemClicked {
 
     private com.example.daumobile.databinding.ActivityHomeBinding binding;
 
     private HomeAdapter mHomeAdapter;
     private List<HomeItem> mHomeItems;
     private People currentPeople;
+
+    @Override
+    protected ActivityHomeBinding getBinding() {
+        return null;
+    }
+
+    @Override
+    protected void onViewReady(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

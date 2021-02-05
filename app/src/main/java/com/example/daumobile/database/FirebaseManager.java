@@ -6,7 +6,10 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.daumobile.model.Point;
+import com.example.daumobile.model.Program;
 import com.example.daumobile.model.Schedule;
+import com.example.daumobile.model.User;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
 import com.example.daumobile.model.authen.Teacher;
@@ -27,6 +30,8 @@ public class FirebaseManager {
 
     private DatabaseReference mUserFref;
     private DatabaseReference mScheduleFref;
+    private DatabaseReference mProgramFref;
+    private DatabaseReference mPointFref;
 
     private MutableLiveData<List<People>> mUserData;
 
@@ -38,9 +43,11 @@ public class FirebaseManager {
         mContext = context;
         mUserData = new MutableLiveData<>();
 
-        mDatabase = FirebaseDatabase.getInstance();
-        mUserFref = mDatabase.getReference("users");
-        mScheduleFref = mDatabase.getReference("schedule");
+        mDatabase       = FirebaseDatabase.getInstance();
+        mUserFref       = mDatabase.getReference("users");
+        mScheduleFref   = mDatabase.getReference("schedule");
+        mPointFref      = mDatabase.getReference("point");
+        mProgramFref    = mDatabase.getReference("program");
 
         onListenUserValue();
     }
@@ -62,17 +69,36 @@ public class FirebaseManager {
         People teacher2 = new Teacher("112", "111", "Giao vien 2", "ha noi", "0935369253","Lap trinh web");
         People teacher3 = new Teacher("113", "111", "Giao vien 3", "ha noi", "0935449253","Lap trinh java");
 
-        mUserFref.child(admin.getId()).setValue(admin);
-        mUserFref.child(student1.getId()).setValue(student1);
-        mUserFref.child(student2.getId()).setValue(student2);
-        mUserFref.child(student3.getId()).setValue(student3);
-        mUserFref.child(teacher1.getId()).setValue(teacher1);
-        mUserFref.child(teacher2.getId()).setValue(teacher2);
-        mUserFref.child(teacher3.getId()).setValue(teacher3);
+        addUser(admin);
+        addUser(student1);
+        addUser(student2);
+        addUser(student3);
+        addUser(teacher1);
+        addUser(teacher2);
+        addUser(teacher3);
+//        mUserFref.child(admin.getId()).setValue(admin);
+//        mUserFref.child(student1.getId()).setValue(student1);
+//        mUserFref.child(student2.getId()).setValue(student2);
+//        mUserFref.child(student3.getId()).setValue(student3);
+//        mUserFref.child(teacher1.getId()).setValue(teacher1);
+//        mUserFref.child(teacher2.getId()).setValue(teacher2);
+//        mUserFref.child(teacher3.getId()).setValue(teacher3);
     }
 
-    public void createSchedule(Schedule schedule) {
+    public void addUser(People people) {
+        mUserFref.child(people.getId()).setValue(people);
+    }
+
+    public void addSchedule(Schedule schedule) {
         mScheduleFref.child(schedule.getMaHP()).setValue(schedule);
+    }
+
+    public void addProgram(Program program) {
+        mProgramFref.child(program.getMaHP()).setValue(program);
+    }
+
+    public void addPoint(Point point){
+        mPointFref.child(point.getId()).setValue(point);
     }
 
     private void onListenUserValue() {
@@ -82,6 +108,7 @@ public class FirebaseManager {
                 List<People> results = new ArrayList<>();
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     results.add(postSnapshot.getValue(People.class));
+
                 }
                 mUserData.postValue(results);
             }

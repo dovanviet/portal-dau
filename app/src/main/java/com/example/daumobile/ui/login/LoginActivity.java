@@ -2,37 +2,45 @@ package com.example.daumobile.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+
 import com.example.daumobile.database.Constants;
+import com.example.daumobile.database.FirebaseManager;
+import com.example.daumobile.databinding.ActivityLoginBinding;
+import com.example.daumobile.model.Point;
 import com.example.daumobile.model.authen.PEOPLE_TYPE;
 import com.example.daumobile.model.authen.People;
-import com.example.daumobile.database.FirebaseManager;
 import com.example.daumobile.ui.base.BaseActivity;
 import com.example.daumobile.ui.home.HomeActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
     private static final String TAG = "__LoginActivity";
 
-    private com.example.daumobile.databinding.ActivityLoginBinding binding;
+    @Override
+    protected ActivityLoginBinding getBinding() {
+        return ActivityLoginBinding.inflate(getLayoutInflater());
+    }
+
+    @Override
+    protected void onViewReady(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        mFirebaseManager = FirebaseManager.getInstance(this);
+
+//        mssv, String tenHp, int tinChi, double diemTrungBinh, double diemLan1, double diemLan2
+        mFirebaseManager.addPoint(new Point("123", "12", 3, 10.0 ,10.0, -1.0));
+        setListeners();
+    }
+
     private FirebaseManager mFirebaseManager;
 
     private List<People> mPeople = new ArrayList<>();
     private Boolean isStudent = true;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = com.example.daumobile.databinding.ActivityLoginBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        mFirebaseManager = FirebaseManager.getInstance(this);
-
-        setListeners();
-    }
 
     public People findUser(String id, String password, int level) {
         for(People people : mPeople) {
