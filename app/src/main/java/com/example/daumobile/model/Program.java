@@ -1,79 +1,85 @@
 package com.example.daumobile.model;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class Program {
-    String tenChuongTrinh;
+    //STT->	Tên chương trình đào tạo->	Mã học phần	->Tên học phần->	Loại học phần->	ĐVHT/STC  -> học kỳ -> Năm
+    String id = UUID.randomUUID().toString();
+    String stt;
+    String tenLop;
     String maHP;
     String tenHP;
     String loaiHP;
-    int soTinChi;
+    String stc;
+    int hocky;
+    String nam;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Program program = (Program) o;
-        return soTinChi == program.soTinChi &&
-                Objects.equals(tenChuongTrinh, program.tenChuongTrinh) &&
+        return hocky == program.hocky &&
+                Objects.equals(id, program.id) &&
+                Objects.equals(stt, program.stt) &&
+                Objects.equals(tenLop, program.tenLop) &&
                 Objects.equals(maHP, program.maHP) &&
                 Objects.equals(tenHP, program.tenHP) &&
-                Objects.equals(loaiHP, program.loaiHP);
+                Objects.equals(loaiHP, program.loaiHP) &&
+                Objects.equals(stc, program.stc) &&
+                Objects.equals(nam, program.nam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tenChuongTrinh, maHP, tenHP, loaiHP, soTinChi);
+        return Objects.hash(id, stt, tenLop, maHP, tenHP, loaiHP, stc, hocky, nam);
     }
 
-    public String getTenChuongTrinh() {
-        return tenChuongTrinh;
+    public String getId() {
+        return id;
     }
 
-    public void setTenChuongTrinh(String tenChuongTrinh) {
-        this.tenChuongTrinh = tenChuongTrinh;
+    public String getStt() {
+        return stt;
+    }
+
+    public String getTenLop() {
+        return tenLop;
     }
 
     public String getMaHP() {
         return maHP;
     }
 
-    public void setMaHP(String maHP) {
-        this.maHP = maHP;
-    }
-
     public String getTenHP() {
         return tenHP;
-    }
-
-    public void setTenHP(String tenHP) {
-        this.tenHP = tenHP;
     }
 
     public String getLoaiHP() {
         return loaiHP;
     }
 
-    public void setLoaiHP(String loaiHP) {
-        this.loaiHP = loaiHP;
+    public String getStc() {
+        return stc;
     }
 
-    public int getSoTinChi() {
-        return soTinChi;
+    public int getHocky() {
+        return hocky;
     }
 
-    public void setSoTinChi(int soTinChi) {
-        this.soTinChi = soTinChi;
+    public String getNam() {
+        return nam;
     }
 
-    public Program() {
-    }
-
-    public Program(String tenChuongTrinh, String maHP, String tenHP, String loaiHP, int soTinChi) {
-        this.tenChuongTrinh = tenChuongTrinh;
+    public Program(String stt, String tenLop, String maHP, String tenHP, String loaiHP, String stc, int hocky, String nam) {
+        this.stt = stt;
+        this.tenLop = tenLop;
         this.maHP = maHP;
         this.tenHP = tenHP;
         this.loaiHP = loaiHP;
-        this.soTinChi = soTinChi;
+        this.stc = stc;
+        this.hocky = hocky;
+        this.nam = nam;
     }
 }

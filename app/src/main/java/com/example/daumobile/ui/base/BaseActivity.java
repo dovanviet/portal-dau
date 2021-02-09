@@ -2,6 +2,8 @@ package com.example.daumobile.ui.base;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -15,6 +17,7 @@ public abstract class BaseActivity<B extends ViewBinding> extends AppCompatActiv
 
     protected B binding;
 
+    private static final String TAG = "__BaseActivity";
     protected abstract B getBinding();
     protected abstract void onViewReady(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState);
 
@@ -23,6 +26,7 @@ public abstract class BaseActivity<B extends ViewBinding> extends AppCompatActiv
         super.onCreate(savedInstanceState, persistentState);
         binding = getBinding();
         setContentView(binding.getRoot());
+        Log.d(TAG, "onCreate: ");
 
         onViewReady(savedInstanceState, persistentState);
     }

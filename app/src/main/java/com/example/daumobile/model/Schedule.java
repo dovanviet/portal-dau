@@ -1,15 +1,18 @@
 package com.example.daumobile.model;
 
+import java.util.UUID;
+
 public class Schedule {
+    String id = UUID.randomUUID().toString();
     String maHP;
     String tenHP;
     String loaiHP;
     int soTinChi;
     String lopHoc;
     int soTiet;
-    String idGiangVien;
+    String tenGiangVien;
     String thoiGianDayTrongTuan;
-    int thoiGian;
+    long thoiGian;
     String buoi;
     String tiet;
     boolean tamdung;
@@ -62,12 +65,12 @@ public class Schedule {
         this.soTiet = soTiet;
     }
 
-    public String getIdGiangVien() {
-        return idGiangVien;
+    public String getTenGiangVien() {
+        return tenGiangVien;
     }
 
-    public void setIdGiangVien(String idGiangVien) {
-        this.idGiangVien = idGiangVien;
+    public void setTenGiangVien(String tenGiangVien) {
+        this.tenGiangVien = tenGiangVien;
     }
 
     public String getThoiGianDayTrongTuan() {
@@ -78,11 +81,11 @@ public class Schedule {
         this.thoiGianDayTrongTuan = thoiGianDayTrongTuan;
     }
 
-    public int getThoiGian() {
+    public long getThoiGian() {
         return thoiGian;
     }
 
-    public void setThoiGian(int thoiGian) {
+    public void setThoiGian(long thoiGian) {
         this.thoiGian = thoiGian;
     }
 
@@ -110,29 +113,18 @@ public class Schedule {
         this.tamdung = tamdung;
     }
 
-    public Schedule(String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String idGiangVien, String thoiGianDayTrongTuan, int thoiGian, String buoi, String tiet) {
-        this.maHP = maHP;
-        this.tenHP = tenHP;
-        this.loaiHP = loaiHP;
-        this.soTinChi = soTinChi;
-        this.lopHoc = lopHoc;
-        this.soTiet = soTiet;
-        this.idGiangVien = idGiangVien;
-        this.thoiGianDayTrongTuan = thoiGianDayTrongTuan;
-        this.thoiGian = thoiGian;
-        this.buoi = buoi;
-        this.tiet = tiet;
-        this.tamdung = false;
+    public String getId() {
+        return id;
     }
 
-    public Schedule(String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String idGiangVien, String thoiGianDayTrongTuan, int thoiGian, String buoi, String tiet, boolean tamdung) {
+    public Schedule(String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, long thoiGian, String buoi, String tiet, boolean tamdung) {
         this.maHP = maHP;
         this.tenHP = tenHP;
         this.loaiHP = loaiHP;
         this.soTinChi = soTinChi;
         this.lopHoc = lopHoc;
         this.soTiet = soTiet;
-        this.idGiangVien = idGiangVien;
+        this.tenGiangVien = tenGiangVien;
         this.thoiGianDayTrongTuan = thoiGianDayTrongTuan;
         this.thoiGian = thoiGian;
         this.buoi = buoi;

@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "763595151760",
+    "firebase_url": "https://portaldau-default-rtdb.firebaseio.com",
     "project_id": "portaldau",
     "storage_bucket": "portaldau.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:763595151760:android:45198b903709bf8a64bb15",
+        "mobilesdk_app_id": "1:763595151760:android:54eef0f1e707c74b64bb15",
         "android_client_info": {
           "package_name": "com.example.daumobile"
         }

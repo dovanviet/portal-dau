@@ -2,11 +2,11 @@ package com.example.daumobile.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.os.FileUtils;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.daumobile.database.Constants;
 import com.example.daumobile.database.FirebaseManager;
@@ -14,33 +14,37 @@ import com.example.daumobile.databinding.ActivityLoginBinding;
 import com.example.daumobile.model.Point;
 import com.example.daumobile.model.authen.PEOPLE_TYPE;
 import com.example.daumobile.model.authen.People;
-import com.example.daumobile.ui.base.BaseActivity;
 import com.example.daumobile.ui.home.HomeActivity;
+import com.example.daumobile.utils.FileService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
-    private static final String TAG = "__LoginActivity";
+public class LoginActivity extends AppCompatActivity {
+    private static final String TAG = "__Login2Activity";
 
-    @Override
-    protected ActivityLoginBinding getBinding() {
-        return ActivityLoginBinding.inflate(getLayoutInflater());
-    }
-
-    @Override
-    protected void onViewReady(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        mFirebaseManager = FirebaseManager.getInstance(this);
-
-//        mssv, String tenHp, int tinChi, double diemTrungBinh, double diemLan1, double diemLan2
-        mFirebaseManager.addPoint(new Point("123", "12", 3, 10.0 ,10.0, -1.0));
-        setListeners();
-    }
-
+    private ActivityLoginBinding binding;
     private FirebaseManager mFirebaseManager;
-
     private List<People> mPeople = new ArrayList<>();
     private Boolean isStudent = true;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        //add data
+//        FileService.readPoint(this);
+//        FileService.readProgram(this);
+//        FileService.readSchedule(this);
+
+        mFirebaseManager = FirebaseManager.getInstance();
+
+        //mssv, String tenHp, int tinChi, double diemTrungBinh,double diemLan1,double diemLan2
+//        mFirebaseManager.addPoint(new Point("123", "tenHP", 3, 3.3,3,0));
+        setListeners();
+    }
 
     public People findUser(String id, String password, int level) {
         for(People people : mPeople) {
@@ -70,11 +74,11 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                 Toast.makeText(this, "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show();
                 binding.edtPassword.requestFocus();
             } else if (peopleFound != null) {
-                    Intent intent = new Intent(this, HomeActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra(Constants.IT_PEOPLE, peopleFound);
+                Intent intent = new Intent(this, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra(Constants.IT_PEOPLE, peopleFound);
 
-                    startActivity(intent);
+                startActivity(intent);
             } else {
                 Toast.makeText(this, "Sai tài khoản hoặc mật khẩu, vui lòng đăng nhập lại", Toast.LENGTH_SHORT).show();
             }
@@ -90,10 +94,6 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
             }
         });
 
-        mFirebaseManager.getUserData().observe(this, logins -> {
-            mPeople = logins;
-
-            Log.d(TAG, "setListeners: " + logins);
-        });
+        mFirebaseManager.getUserData().observe(this, logins -> mPeople = logins);
     }
 }

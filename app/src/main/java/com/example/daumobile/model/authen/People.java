@@ -99,4 +99,16 @@ public class People implements Serializable {
         this.address = address;
         this.numberphone = numberphone;
     }
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                ", type=" + type +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", numberphone='" + numberphone + '\'' +
+                '}';
+    }
 }

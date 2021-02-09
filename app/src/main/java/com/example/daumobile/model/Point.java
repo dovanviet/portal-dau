@@ -3,7 +3,6 @@ package com.example.daumobile.model;
 import java.util.Objects;
 import java.util.UUID;
 
-import javax.annotation.Nullable;
 
 public class Point {
     String id = UUID.randomUUID().toString();
@@ -13,6 +12,7 @@ public class Point {
     double diemTrungBinh;
     double diemLan1;
     double diemLan2;
+
 
     @Override
     public boolean equals(Object o) {
@@ -92,7 +92,7 @@ public class Point {
     public Point() {
     }
 
-    public Point(String id, String mssv, String tenHp, int tinChi, double diemTrungBinh,@Nullable double diemLan1,@Nullable double diemLan2) {
+    public Point(String id, String mssv, String tenHp, int tinChi, double diemTrungBinh,double diemLan1,double diemLan2) {
         this.id = id;
         this.mssv = mssv;
         this.tenHp = tenHp;
@@ -102,12 +102,25 @@ public class Point {
         this.diemLan2 = diemLan2;
     }
 
-    public Point(String mssv, String tenHp, int tinChi, double diemTrungBinh, @Nullable double diemLan1,@Nullable double diemLan2) {
+    public Point(String mssv, String tenHp, int tinChi, double diemTrungBinh,double diemLan1,double diemLan2) {
         this.mssv = mssv;
         this.tenHp = tenHp;
         this.tinChi = tinChi;
         this.diemTrungBinh = diemTrungBinh;
         this.diemLan1 = diemLan1;
         this.diemLan2 = diemLan2;
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "id='" + id + '\'' +
+                ", mssv='" + mssv + '\'' +
+                ", tenHp='" + tenHp + '\'' +
+                ", tinChi=" + tinChi +
+                ", diemTrungBinh=" + diemTrungBinh +
+                ", diemLan1=" + diemLan1 +
+                ", diemLan2=" + diemLan2 +
+                '}';
     }
 }

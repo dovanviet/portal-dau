@@ -9,7 +9,6 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.daumobile.model.Point;
 import com.example.daumobile.model.Program;
 import com.example.daumobile.model.Schedule;
-import com.example.daumobile.model.User;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
 import com.example.daumobile.model.authen.Teacher;
@@ -25,42 +24,55 @@ import java.util.List;
 public class FirebaseManager {
     private static final String TAG = "__FirebaseManager";
     private static FirebaseManager mInstance = null;
-    private Context mContext;
-    private FirebaseDatabase mDatabase;
 
-    private DatabaseReference mUserFref;
-    private DatabaseReference mScheduleFref;
-    private DatabaseReference mProgramFref;
-    private DatabaseReference mPointFref;
+    private final DatabaseReference mUserFref;
+    private final DatabaseReference mScheduleFref;
+    private final DatabaseReference mProgramFref;
+    private final DatabaseReference mPointFref;
 
-    private MutableLiveData<List<People>> mUserData;
+    private final MutableLiveData<List<People>> mUserData = new MutableLiveData<>();
+    private final MutableLiveData<List<Schedule>> mScheduleData = new MutableLiveData<>();
+    private final MutableLiveData<List<Program>> mProgramData = new MutableLiveData<>();
+    private final MutableLiveData<List<Point>> mPointData = new MutableLiveData<>();
 
     public MutableLiveData<List<People>> getUserData() {
         return mUserData;
     }
 
-    private FirebaseManager(Context context) {
-        mContext = context;
-        mUserData = new MutableLiveData<>();
+    public DatabaseReference getPointFref() {
+        return mPointFref;
+    }
 
-        mDatabase       = FirebaseDatabase.getInstance();
-        mUserFref       = mDatabase.getReference("users");
-        mScheduleFref   = mDatabase.getReference("schedule");
-        mPointFref      = mDatabase.getReference("point");
-        mProgramFref    = mDatabase.getReference("program");
+    public MutableLiveData<List<Schedule>> getScheduleData() {
+        return mScheduleData;
+    }
+
+    public MutableLiveData<List<Program>> getProgramData() {
+        return mProgramData;
+    }
+
+    public MutableLiveData<List<Point>> getPointData() {
+        return mPointData;
+    }
+
+    private FirebaseManager() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        mUserFref       = database.getReference("users");
+        mScheduleFref   = database.getReference("schedule");
+        mPointFref      = database.getReference("point");
+        mProgramFref    = database.getReference("program");
 
         onListenUserValue();
     }
 
-    public static FirebaseManager getInstance(Context context) {
+    public static FirebaseManager getInstance() {
         if (mInstance == null){
-            mInstance = new FirebaseManager(context);
+            mInstance = new FirebaseManager();
         }
         return mInstance;
     }
 
     public void initData() {
-        People admin = new People("admin", "admin");
         People student1 = new Student("123", "123", "do van viet", "quang nam", "0945112445","16CT");
         People student2 = new Student("345", "123", "bui vinh khai", "da nang", "0933527563","16CT");
         People student3 = new Student("456", "123", "nguyen thanh long", "quang tri", "09334347563","16CT");
@@ -69,20 +81,12 @@ public class FirebaseManager {
         People teacher2 = new Teacher("112", "111", "Giao vien 2", "ha noi", "0935369253","Lap trinh web");
         People teacher3 = new Teacher("113", "111", "Giao vien 3", "ha noi", "0935449253","Lap trinh java");
 
-        addUser(admin);
         addUser(student1);
         addUser(student2);
         addUser(student3);
         addUser(teacher1);
         addUser(teacher2);
         addUser(teacher3);
-//        mUserFref.child(admin.getId()).setValue(admin);
-//        mUserFref.child(student1.getId()).setValue(student1);
-//        mUserFref.child(student2.getId()).setValue(student2);
-//        mUserFref.child(student3.getId()).setValue(student3);
-//        mUserFref.child(teacher1.getId()).setValue(teacher1);
-//        mUserFref.child(teacher2.getId()).setValue(teacher2);
-//        mUserFref.child(teacher3.getId()).setValue(teacher3);
     }
 
     public void addUser(People people) {
@@ -90,11 +94,11 @@ public class FirebaseManager {
     }
 
     public void addSchedule(Schedule schedule) {
-        mScheduleFref.child(schedule.getMaHP()).setValue(schedule);
+        mScheduleFref.child(schedule.getId()).setValue(schedule);
     }
 
     public void addProgram(Program program) {
-        mProgramFref.child(program.getMaHP()).setValue(program);
+        mProgramFref.child(program.getId()).setValue(program);
     }
 
     public void addPoint(Point point){
@@ -115,9 +119,62 @@ public class FirebaseManager {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.w(TAG, "loadPost:onCancelled", error.toException());
+                Log.d(TAG, "loadPost:onCancelled", error.toException());
             }
         });
+
+        mPointFref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Point> results = new ArrayList<>();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    results.add(postSnapshot.getValue(Point.class));
+
+                }
+                mPointData.postValue(results);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d(TAG, "loadPost:onCancelled", error.toException());
+            }
+        });
+
+        mProgramFref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Program> results = new ArrayList<>();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    results.add(postSnapshot.getValue(Program.class));
+
+                }
+                mProgramData.postValue(results);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d(TAG, "loadPost:onCancelled", error.toException());
+            }
+        });
+
+        mScheduleFref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Schedule> results = new ArrayList<>();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    results.add(postSnapshot.getValue(Schedule.class));
+
+                }
+                mScheduleData.postValue(results);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d(TAG, "loadPost:onCancelled", error.toException());
+            }
+        });
+
+
     }
 
 

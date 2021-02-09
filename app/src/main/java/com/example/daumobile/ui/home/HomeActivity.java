@@ -32,7 +32,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
 
     @Override
     protected ActivityHomeBinding getBinding() {
-        return null;
+        return ActivityHomeBinding.inflate(getLayoutInflater());
     }
 
     @Override
