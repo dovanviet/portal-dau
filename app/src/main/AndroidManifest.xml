@@ -14,18 +14,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.login.LoginActivity"
-            android:theme="@style/AppTheme"
-            >
+        <activity android:name=".ui.point.PointActivity"></activity>
+        <activity android:name=".ui.program.ProgramActivity" />
+        <activity android:name=".ui.schedule.ScheduleActivity" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.program.ProgramActivity" />
-        <activity android:name=".ui.schedule.ScheduleActivity" />
         <activity android:name=".ui.user.UserActivity" />
-        <activity android:name=".ui.point.PointActivity" />
         <activity android:name=".ui.home.HomeActivity" />
     </application>
 

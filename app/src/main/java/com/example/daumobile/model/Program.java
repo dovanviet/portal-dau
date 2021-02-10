@@ -82,4 +82,19 @@ public class Program {
         this.hocky = hocky;
         this.nam = nam;
     }
+
+    public Program(String id, String stt, String tenLop, String maHP, String tenHP, String loaiHP, String stc, int hocky, String nam) {
+        this.id = id;
+        this.stt = stt;
+        this.tenLop = tenLop;
+        this.maHP = maHP;
+        this.tenHP = tenHP;
+        this.loaiHP = loaiHP;
+        this.stc = stc;
+        this.hocky = hocky;
+        this.nam = nam;
+    }
+
+    public Program() {
+    }
 }

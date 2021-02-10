@@ -8,7 +8,7 @@
         android:layout_height="80dp">
 
         <TextView
-            android:id="@+id/tv_it_program_nameHp"
+            android:id="@+id/tvTenHp"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
@@ -19,7 +19,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_it_program_typeHp"
+            android:id="@+id/tvLoaiHp"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
@@ -31,10 +31,10 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_it_program_so_tin_chi"
+            android:id="@+id/tvSoTinChi"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_below="@id/tv_it_program_typeHp"
+            android:layout_below="@id/tvLoaiHp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
@@ -43,10 +43,10 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/tv_it_program_codeHp"
+            android:id="@+id/tvMaHp"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_below="@id/tv_it_program_nameHp"
+            android:layout_below="@id/tvTenHp"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="5dp"
             android:text="CAL101"

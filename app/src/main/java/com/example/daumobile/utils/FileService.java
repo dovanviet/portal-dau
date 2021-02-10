@@ -123,7 +123,7 @@ public class FileService {
                 int soTinChiI = Integer.parseInt(stc);
 
                 //String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, int thoiGian, String buoi, String tiet, boolean tamdung
-                Schedule schedule = new Schedule(maHP, tenHP, loaiHP, soTinChiI, lopHoc, soTietI, giangVien, ngayHoc, thoiGianI, buoi, tiet, tamdungB);
+                Schedule schedule = new Schedule(maHP, tenHP, loaiHP, soTinChiI, lopHoc, soTietI, giangVien, ngayHoc, thoiGianI, buoi, tiet, tamdungB, hocKy, nam, phong);
                 mFirebaseManager.addSchedule(schedule);
             }
         } catch (IOException e) {

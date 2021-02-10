@@ -6,6 +6,9 @@ import java.util.Objects;
 public class Teacher extends People  implements Serializable {
     String monDay;
 
+    public Teacher() {
+    }
+
     public Teacher(String monDay) {
         this.monDay = monDay;
     }

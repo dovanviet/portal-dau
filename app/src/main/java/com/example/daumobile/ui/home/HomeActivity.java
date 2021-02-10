@@ -3,12 +3,14 @@ package com.example.daumobile.ui.home;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
 import com.example.daumobile.database.Constants;
 import com.example.daumobile.databinding.ActivityHomeBinding;
+import com.example.daumobile.model.Program;
 import com.example.daumobile.model.authen.PEOPLE_TYPE;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.home.HomeItem;
@@ -17,6 +19,9 @@ import com.example.daumobile.callbacks.IListenerItemClicked;
 import com.example.daumobile.ui.base.BaseActivity;
 import com.example.daumobile.ui.home.adapter.HomeAdapter;
 import com.example.daumobile.ui.login.LoginActivity;
+import com.example.daumobile.ui.point.PointActivity;
+import com.example.daumobile.ui.program.ProgramActivity;
+import com.example.daumobile.ui.schedule.ScheduleActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -71,12 +76,12 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
             HomeItem item5 = new HomeItem();
             HomeItem item6 = new HomeItem();
 
-            item1.setName("Xem điểm");
-            item2.setName("Thời khóa biểu");
-            item3.setName("Lịch thi");
-            item4.setName("Chương trình đào tạo");
-            item5.setName("Thông tin cá nhân");
-            item6.setName("Đăng xuất");
+            item1.setName(Constants.MENU_XEMDIEM);
+            item2.setName(Constants.MENU_THOIKHOABIEU);
+            item3.setName(Constants.MENU_LICHTHI);
+            item4.setName(Constants.MENU_CHUONGTRINHDAOTAO);
+            item5.setName(Constants.MENU_THONGTINCANHAN);
+            item6.setName(Constants.MENU_DANGXUAT);
 
             item1.setImage(R.drawable.ic_xemdiem);
             item2.setImage(R.drawable.ic_calendar);
@@ -96,9 +101,9 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
             HomeItem item2 = new HomeItem();
             HomeItem item3 = new HomeItem();
 
-            item1.setName("Lịch dạy");
-            item2.setName("Thông tin cá nhân");
-            item3.setName("Đăng xuất");
+            item1.setName(Constants.MENU_LICHDAY);
+            item2.setName(Constants.MENU_THONGTINCANHAN);
+            item3.setName(Constants.MENU_DANGXUAT);
             item1.setImage(R.drawable.ic_giangvien_lichday);
             item2.setImage(R.drawable.ic_giangvien_thongtincanhan);
             item3.setImage(R.drawable.ic_logout);
@@ -124,11 +129,35 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
 
     @Override
     public void onItemClicked(HomeItem item) {
-        if (item.getName().toLowerCase().equals("đăng xuất")) {
-            Intent intent = new Intent(this, LoginActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent;
+        switch (item.getName()) {
+            case Constants.MENU_DANGXUAT:
+                intent = new Intent(this, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
-            startActivity(intent);
+                startActivity(intent);
+                break;
+            case Constants.MENU_CHUONGTRINHDAOTAO:
+                intent = new Intent(this, ProgramActivity.class);
+                intent.putExtra(Constants.IT_PEOPLE, currentPeople);
+                startActivity(intent);
+            case Constants.MENU_LICHDAY:
+                break;
+            case Constants.MENU_LICHTHI:
+                break;
+            case Constants.MENU_THOIKHOABIEU:
+                intent = new Intent(this, ScheduleActivity.class);
+                intent.putExtra(Constants.IT_PEOPLE, currentPeople);
+                startActivity(intent);
+            case Constants.MENU_THONGTINCANHAN:
+                break;
+            case Constants.MENU_XEMDIEM:
+                intent = new Intent(this, PointActivity.class);
+                intent.putExtra(Constants.IT_PEOPLE, currentPeople);
+                startActivity(intent);
+            default:
+                break;
+
         }
     }
 }

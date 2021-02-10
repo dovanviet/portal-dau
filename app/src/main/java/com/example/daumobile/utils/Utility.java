@@ -21,8 +21,8 @@ public class Utility {
         return INSTANCE;
     }
 
-    public int getIdImagePoint(int diem_lan_1, int diem_lan_2) {
-        int point_max = Math.max(diem_lan_1, diem_lan_2);
+    public int getIdImagePoint(double diem_lan_1, double diem_lan_2) {
+        int point_max = Math.max(convertPoint10To4(diem_lan_1), convertPoint10To4(diem_lan_2));
         switch (point_max) {
             case 4:
                 return R.mipmap.a;
@@ -34,6 +34,20 @@ public class Utility {
                 return R.mipmap.d;
         }
         return R.mipmap.f;
+    }
+
+    private int convertPoint10To4(double point) {
+        if (point >= 8.5) {
+            return 4;
+        } else if (point >= 7) {
+            return 3;
+        } else if (point >= 6) {
+            return 2;
+        } else if (point >= 5) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public double tinh_diem_trung_binh(ArrayList<Integer> ds_diem, long tong_tin_chi) {

@@ -30,4 +30,12 @@ public class Constants {
     //authen
 //    public static final int GIANG_VIEN = 0;
 //    public static final int SINH_VIEN = 1;
+
+    public static final String MENU_XEMDIEM = "Xem điểm";
+    public static final String MENU_THOIKHOABIEU = "Thời khoá biểu";
+    public static final String MENU_LICHTHI = "Lịch thi";
+    public static final String MENU_LICHDAY = "Lịch dạy";
+    public static final String MENU_THONGTINCANHAN = "Thông tin cá nhân";
+    public static final String MENU_CHUONGTRINHDAOTAO = "Chương trình đào tạo";
+    public static final String MENU_DANGXUAT = "Đăng xuất";
 }

@@ -20,6 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class FirebaseManager {
     private static final String TAG = "__FirebaseManager";
@@ -37,10 +38,6 @@ public class FirebaseManager {
 
     public MutableLiveData<List<People>> getUserData() {
         return mUserData;
-    }
-
-    public DatabaseReference getPointFref() {
-        return mPointFref;
     }
 
     public MutableLiveData<List<Schedule>> getScheduleData() {
@@ -62,6 +59,7 @@ public class FirebaseManager {
         mPointFref      = database.getReference("point");
         mProgramFref    = database.getReference("program");
 
+//        initData();
         onListenUserValue();
     }
 
@@ -73,13 +71,13 @@ public class FirebaseManager {
     }
 
     public void initData() {
-        People student1 = new Student("123", "123", "do van viet", "quang nam", "0945112445","16CT");
-        People student2 = new Student("345", "123", "bui vinh khai", "da nang", "0933527563","16CT");
-        People student3 = new Student("456", "123", "nguyen thanh long", "quang tri", "09334347563","16CT");
+        Student student1 = new Student("1651120028", "123", "do van viet", "quang nam", "0945112445","16CT");
+        Student student2 = new Student("345", "123", "bui vinh khai", "da nang", "0933527563","16CT");
+        Student student3 = new Student("456", "123", "nguyen thanh long", "quang tri", "09334347563","16CT");
 
-        People teacher1 = new Teacher("111", "111", "Giao vien 1", "quang nam", "0945112445","Nhap Mon Lap Trinh");
-        People teacher2 = new Teacher("112", "111", "Giao vien 2", "ha noi", "0935369253","Lap trinh web");
-        People teacher3 = new Teacher("113", "111", "Giao vien 3", "ha noi", "0935449253","Lap trinh java");
+        Teacher teacher1 = new Teacher("111", "111", "Giao vien 1", "quang nam", "0945112445","Nhap Mon Lap Trinh");
+        Teacher teacher2 = new Teacher("112", "111", "Giao vien 2", "ha noi", "0935369253","Lap trinh web");
+        Teacher teacher3 = new Teacher("113", "111", "Giao vien 3", "ha noi", "0935449253","Lap trinh java");
 
         addUser(student1);
         addUser(student2);
@@ -111,8 +109,18 @@ public class FirebaseManager {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 List<People> results = new ArrayList<>();
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                    results.add(postSnapshot.getValue(People.class));
+                    boolean isStudent = false;
+                    for (DataSnapshot key : postSnapshot.getChildren()) {
+                        if (key.getKey() != null && Objects.requireNonNull(key.getKey()).toLowerCase().equals("lophoc")) {
+                            isStudent = true;
+                        }
+                    }
 
+                    if (isStudent) {
+                        results.add(postSnapshot.getValue(Student.class));
+                    } else {
+                        results.add(postSnapshot.getValue(Teacher.class));
+                    }
                 }
                 mUserData.postValue(results);
             }

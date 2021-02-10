@@ -16,6 +16,17 @@ public class Schedule {
     String buoi;
     String tiet;
     boolean tamdung;
+    String hocky;
+    String nam;
+    String phong;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getMaHP() {
         return maHP;
@@ -113,11 +124,31 @@ public class Schedule {
         this.tamdung = tamdung;
     }
 
-    public String getId() {
-        return id;
+    public String getHocky() {
+        return hocky;
     }
 
-    public Schedule(String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, long thoiGian, String buoi, String tiet, boolean tamdung) {
+    public void setHocky(String hocky) {
+        this.hocky = hocky;
+    }
+
+    public String getNam() {
+        return nam;
+    }
+
+    public void setNam(String nam) {
+        this.nam = nam;
+    }
+
+    public String getPhong() {
+        return phong;
+    }
+
+    public void setPhong(String phong) {
+        this.phong = phong;
+    }
+
+    public Schedule(String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, long thoiGian, String buoi, String tiet, boolean tamdung, String hocky, String nam, String phong) {
         this.maHP = maHP;
         this.tenHP = tenHP;
         this.loaiHP = loaiHP;
@@ -130,6 +161,28 @@ public class Schedule {
         this.buoi = buoi;
         this.tiet = tiet;
         this.tamdung = tamdung;
+        this.hocky = hocky;
+        this.nam = nam;
+        this.phong = phong;
+    }
+
+    public Schedule(String id, String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, long thoiGian, String buoi, String tiet, boolean tamdung, String hocky, String nam, String phong) {
+        this.id = id;
+        this.maHP = maHP;
+        this.tenHP = tenHP;
+        this.loaiHP = loaiHP;
+        this.soTinChi = soTinChi;
+        this.lopHoc = lopHoc;
+        this.soTiet = soTiet;
+        this.tenGiangVien = tenGiangVien;
+        this.thoiGianDayTrongTuan = thoiGianDayTrongTuan;
+        this.thoiGian = thoiGian;
+        this.buoi = buoi;
+        this.tiet = tiet;
+        this.tamdung = tamdung;
+        this.hocky = hocky;
+        this.nam = nam;
+        this.phong = phong;
     }
 
     public Schedule() {

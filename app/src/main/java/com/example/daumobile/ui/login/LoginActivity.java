@@ -94,6 +94,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        mFirebaseManager.getUserData().observe(this, logins -> mPeople = logins);
+        mFirebaseManager.getUserData().observe(this, people -> {
+            mPeople = people;
+        });
     }
 }
