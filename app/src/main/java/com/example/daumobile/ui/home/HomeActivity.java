@@ -142,12 +142,21 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
                 intent.putExtra(Constants.IT_PEOPLE, currentPeople);
                 startActivity(intent);
             case Constants.MENU_LICHDAY:
+                intent = new Intent(this, ScheduleActivity.class);
+                intent.putExtra(Constants.IT_PEOPLE, currentPeople);
+                intent.putExtra(Constants.IT_SCHEDULE, Constants.LICH_DAY);
+                startActivity(intent);
                 break;
             case Constants.MENU_LICHTHI:
+                intent = new Intent(this, ScheduleActivity.class);
+                intent.putExtra(Constants.IT_PEOPLE, currentPeople);
+                intent.putExtra(Constants.IT_SCHEDULE, Constants.LICH_THI);
+                startActivity(intent);
                 break;
             case Constants.MENU_THOIKHOABIEU:
                 intent = new Intent(this, ScheduleActivity.class);
                 intent.putExtra(Constants.IT_PEOPLE, currentPeople);
+                intent.putExtra(Constants.IT_SCHEDULE, Constants.THOI_KHOA_BIEU);
                 startActivity(intent);
             case Constants.MENU_THONGTINCANHAN:
                 break;

@@ -14,7 +14,7 @@
         android:background="@color/CornflowerBlue">
 
         <TextView
-            android:id="@+id/tv_schedule_title"
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -25,12 +25,12 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/btn_schedule_semester"
+            android:id="@+id/btnTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_schedule_title"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="30dp"
+            android:layout_below="@id/tvTitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_schedule_button"
             android:padding="10dp"
@@ -38,12 +38,12 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tv_schedule_semester_value"
+            android:id="@+id/tvTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn_schedule_semester"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="10dp"
+            android:layout_below="@id/btnTime"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:padding="5dp"
             android:text="2018 - 2019 / HK1"
@@ -51,26 +51,26 @@
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/btn_schedule_week"
+            android:id="@+id/btnWeek"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_schedule_title"
-            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tvTitle"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginEnd="25dp"
             android:background="@drawable/custom_schedule_button"
             android:padding="10dp"
             android:text="Tuần"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/tv_schedule_week_value"
+            android:id="@+id/tvWeekValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn_schedule_week"
-            android:layout_alignParentRight="true"
+            android:layout_below="@id/btnWeek"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
             android:gravity="center"
             android:padding="5dp"
             android:text="Tuần 1"

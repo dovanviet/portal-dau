@@ -26,6 +26,7 @@ public class Constants {
     public static final String PATH_FILE_USER = "user.dat";
 
     public static final String IT_PEOPLE = "IT_PEOPLE";
+    public static final String IT_SCHEDULE = "IT_SCHEDULE";
 
     //authen
 //    public static final int GIANG_VIEN = 0;
@@ -38,4 +39,10 @@ public class Constants {
     public static final String MENU_THONGTINCANHAN = "Thông tin cá nhân";
     public static final String MENU_CHUONGTRINHDAOTAO = "Chương trình đào tạo";
     public static final String MENU_DANGXUAT = "Đăng xuất";
+
+
+    // type of schedule
+    public static final String LICH_THI = "Lịch thi";
+    public static final String LICH_DAY = "Lịch dạy";
+    public static final String THOI_KHOA_BIEU = "Thời khoá biểu";
 }

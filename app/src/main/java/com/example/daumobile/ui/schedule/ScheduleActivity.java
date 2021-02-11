@@ -16,6 +16,7 @@ import com.example.daumobile.databinding.ActivityScheduleBinding;
 import com.example.daumobile.model.Schedule;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
+import com.example.daumobile.model.authen.Teacher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
     private ScheduleAdapter mAdapter;
     private List<Schedule> mSchedulers;
     private People mUser;
+    private String mTypeOfSchedule = Constants.THOI_KHOA_BIEU;
 
     private static final String TAG = "__ScheduleActivity";
     @Override
@@ -44,8 +46,12 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
         Intent intent = getIntent();
 
         People people = (People) intent.getSerializableExtra(Constants.IT_PEOPLE);
+        String type = intent.getStringExtra(Constants.IT_SCHEDULE);
         if (people != null) {
             mUser = people;
+        }
+        if (type != null) {
+            mTypeOfSchedule = type;
         }
     }
 
@@ -59,6 +65,8 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         binding.recyclerviewSchedule.addItemDecoration(dividerItemDecoration);
+
+        binding.tvTitle.setText(mTypeOfSchedule);
     }
 
     private void setListeners() {
@@ -66,9 +74,11 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
             mSchedulers.clear();
 
             for(Schedule schedule : schedulers) {
-                Log.d(TAG, "setListeners: " + schedule.getLopHoc() + " - " + ((Student)mUser).getLopHoc());
-
-                if (mUser instanceof Student && schedule.getLopHoc().toLowerCase().contains(((Student)mUser).getLopHoc().toLowerCase()) ) {
+                if (mTypeOfSchedule.equals(Constants.THOI_KHOA_BIEU) &&  mUser instanceof Student && schedule.getLopHoc().toLowerCase().contains(((Student)mUser).getLopHoc().toLowerCase()) ) {
+                    mSchedulers.add(schedule);
+                } else if (mTypeOfSchedule.equals(Constants.LICH_THI)) {
+                    // NOTHING
+                } else if (mTypeOfSchedule.equals(Constants.LICH_DAY) && mUser instanceof Teacher && schedule.getTenGiangVien().toLowerCase().equals(mUser.getName().toLowerCase())) {
                     mSchedulers.add(schedule);
                 }
             }

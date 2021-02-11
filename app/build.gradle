@@ -76,4 +76,7 @@ dependencies {
 
     //toggle
     implementation 'com.github.angads25:toggle:1.1.0'
+
+    // swipe recyclerview
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
 }

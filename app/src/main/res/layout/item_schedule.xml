@@ -19,7 +19,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:layout_above="@id/tvSoTinChi"
+            android:layout_above="@id/tvTenGiangVien"
             android:id="@+id/tvDiaDiem"
             android:gravity="center_vertical"
             android:layout_width="wrap_content"
