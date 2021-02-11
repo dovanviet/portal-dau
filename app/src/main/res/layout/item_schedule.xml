@@ -1,61 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:dragEdge="right"
+    app:mode="same_level">
 
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/flPause"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:background="#ffcc0000">
+
+        <TextView
+            android:id="@+id/tvPause"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_red_dark"
+            android:gravity="center"
+            android:text="Tạm dừng"
+            android:textColor="@android:color/white" />
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="75dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_above="@id/tvTenMonHoc"
-            android:id="@+id/tvThoiGian"
-            android:layout_width="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:text="Thứ 2,  14/08/2018"
-            android:textColor="@color/RoyalBlue"
-            android:textSize="14sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
 
-        <TextView
-            android:layout_above="@id/tvTenGiangVien"
-            android:id="@+id/tvDiaDiem"
-            android:gravity="center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:text="Phòng 512, tiết 6 - 9"
-            android:textColor="@color/RoyalBlue"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tvThoiGian"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_above="@id/tvTenMonHoc"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="Thứ 2,  14/08/2018"
+                android:textColor="@color/RoyalBlue"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tvTenGiangVien"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:gravity="center_vertical|right"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="2dp"
-            android:layout_alignParentBottom="true"
-            android:text="Nguyễn Sanh Châu"
-            android:textColor="@color/MediumSeaGreen"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tvDiaDiem"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_above="@id/tvTenGiangVien"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:text="Phòng 512, tiết 6 - 9"
+                android:textColor="@color/RoyalBlue"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tvTenMonHoc"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="2dp"
-            android:text="Hệ quản trị cơ sở dữ liệu"
-            android:gravity="center_vertical"
-            android:textColor="@color/MediumSeaGreen"
-            android:layout_alignParentBottom="true"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tvTenGiangVien"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="2dp"
+                android:gravity="center_vertical|right"
+                android:text="Nguyễn Sanh Châu"
+                android:textColor="@color/MediumSeaGreen"
+                android:textSize="16sp" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tvTenMonHoc"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="2dp"
+                android:gravity="center_vertical"
+                android:text="Hệ quản trị cơ sở dữ liệu"
+                android:textColor="@color/MediumSeaGreen"
+                android:textSize="16sp" />
 
-
-</androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</com.chauthai.swipereveallayout.SwipeRevealLayout>

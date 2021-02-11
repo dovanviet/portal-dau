@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -42,6 +43,27 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
         setListeners();
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Only if you need to restore open/close state when
+        // the orientation is changed
+        if (mAdapter != null) {
+            mAdapter.saveStates(outState);
+        }
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Only if you need to restore open/close state when
+        // the orientation is changed
+        if (mAdapter != null) {
+            mAdapter.restoreStates(savedInstanceState);
+        }
+    }
+
     private void receiverData() {
         Intent intent = getIntent();
 
@@ -57,7 +79,11 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
 
     private void setViews() {
         mSchedulers = new ArrayList<>();
-        mAdapter = new ScheduleAdapter(mSchedulers, this);
+        if (mUser instanceof Student) {
+            mAdapter = new ScheduleAdapter(mSchedulers, this, false);
+        } else {
+            mAdapter = new ScheduleAdapter(mSchedulers, this, true);
+        }
 
         binding.recyclerviewSchedule.setAdapter(mAdapter);
         binding.recyclerviewSchedule.setLayoutManager(new LinearLayoutManager(this));
@@ -90,5 +116,12 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
     @Override
     public void onItemClicked(int position) {
         Toast.makeText(this, mSchedulers.get(position).getTenHP(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemPauseClicked(int position) {
+        Toast.makeText(this, "Pause at " + mSchedulers.get(position).getTenHP(), Toast.LENGTH_SHORT).show();
+        mAdapter.deleteItemAt(position);
+        mSchedulers.remove(position);
     }
 }

@@ -1,11 +1,13 @@
 package com.example.daumobile.ui.schedule;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.example.daumobile.callbacks.IListenerItemClicked;
 import com.example.daumobile.databinding.ItemScheduleBinding;
 import com.example.daumobile.model.Schedule;
@@ -18,12 +20,17 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     private List<Schedule> currentList;
     private final IListenerItemClicked mListener;
     private final DateUtils dateUtils;
+    private final ViewBinderHelper mBinderHelper;
+    private Boolean isSwipe = false;
 
-    public ScheduleAdapter(@NonNull List<Schedule> list, IListenerItemClicked listener) {
+    public ScheduleAdapter(@NonNull List<Schedule> list, IListenerItemClicked listener, Boolean isSwipe) {
         currentList = list;
         mListener = listener;
+        this.isSwipe = isSwipe;
 
         dateUtils = DateUtils.getInstance();
+        mBinderHelper = new ViewBinderHelper();
+        mBinderHelper.setOpenOnlyOne(true);
     }
 
     @NonNull
@@ -37,6 +44,25 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bindData(getItem(position));
+        if (isSwipe) {
+            mBinderHelper.bind(holder.binding.swipeLayout, getItem(position).getId());
+        }
+    }
+
+    /**
+     * Only if you need to restore open/close state when the orientation is changed.
+     * Call this method in {@link android.app.Activity#onSaveInstanceState(Bundle)}
+     */
+    public void saveStates(Bundle outState) {
+        mBinderHelper.saveStates(outState);
+    }
+
+    /**
+     * Only if you need to restore open/close state when the orientation is changed.
+     * Call this method in {@link android.app.Activity#onRestoreInstanceState(Bundle)}
+     */
+    public void restoreStates(Bundle inState) {
+        mBinderHelper.restoreStates(inState);
     }
 
     public Schedule getItem(int position) {
@@ -47,6 +73,13 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
         currentList = new ArrayList<>(list);
 
         notifyDataSetChanged();
+    }
+
+    public void deleteItemAt(int position) {
+        if (position >= 0 && position <= currentList.size()) {
+            currentList.remove(position);
+            notifyItemRemoved(position);
+        }
     }
 
     @Override
@@ -62,7 +95,10 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
             super(scheduleBinding.getRoot());
             binding = scheduleBinding;
 
-            itemView.setOnClickListener(v -> mListener.onItemClicked(getAdapterPosition()));
+            binding.flPause.setOnClickListener(v -> mListener.onItemPauseClicked(getAdapterPosition()));
+            binding.cardView.setOnClickListener(v -> mListener.onItemClicked(getAdapterPosition()));
+
+            binding.swipeLayout.setLockDrag(!isSwipe);
         }
 
         public void bindData(Schedule schedule) {
