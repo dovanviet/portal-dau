@@ -18,6 +18,7 @@ import com.example.daumobile.model.Schedule;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
 import com.example.daumobile.model.authen.Teacher;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,6 +122,8 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
     @Override
     public void onItemPauseClicked(int position) {
         Toast.makeText(this, "Pause at " + mSchedulers.get(position).getTenHP(), Toast.LENGTH_SHORT).show();
+        // Pause and sends notify to users
+//        FirebaseDatabase.getInstance().getReference().child("")
         mAdapter.deleteItemAt(position);
         mSchedulers.remove(position);
     }
