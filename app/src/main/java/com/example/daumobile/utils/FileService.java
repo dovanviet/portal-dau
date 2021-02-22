@@ -26,6 +26,7 @@ public class FileService {
                 if (mLine.trim().startsWith("//") || mLine.isEmpty()) {
                     continue;
                 }
+                Log.d(TAG, "readPoint: " + mLine);
                 String[] splits = mLine.split("->");
                 String mssv = splits[0].trim();
                 String tenHp = splits[1].trim();
