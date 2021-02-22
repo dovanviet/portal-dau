@@ -12,6 +12,7 @@ import com.example.daumobile.model.Schedule;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
 import com.example.daumobile.model.authen.Teacher;
+import com.example.daumobile.utils.NotifyUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,6 +26,8 @@ import java.util.Objects;
 public class FirebaseManager {
     private static final String TAG = "__FirebaseManager";
     private static FirebaseManager mInstance = null;
+
+    private NotifyUtils mNotifyInstance;
 
     private final DatabaseReference mUserFref;
     private final DatabaseReference mScheduleFref;
@@ -52,20 +55,21 @@ public class FirebaseManager {
         return mPointData;
     }
 
-    private FirebaseManager() {
+    private FirebaseManager(@NonNull Context context) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         mUserFref       = database.getReference("users");
         mScheduleFref   = database.getReference("schedule");
         mPointFref      = database.getReference("point");
         mProgramFref    = database.getReference("program");
 
+        mNotifyInstance = NotifyUtils.getInstance(context);
 //        initData();
         onListenUserValue();
     }
 
-    public static FirebaseManager getInstance() {
+    public static FirebaseManager getInstance(@NonNull Context context) {
         if (mInstance == null){
-            mInstance = new FirebaseManager();
+            mInstance = new FirebaseManager(context);
         }
         return mInstance;
     }
@@ -107,9 +111,11 @@ public class FirebaseManager {
     }
 
     private void onListenUserValue() {
+        Log.d(TAG, "onListenUserValue: ???");
         mUserFref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.d(TAG, "onDataChange: 1");
                 List<People> results = new ArrayList<>();
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     boolean isStudent = false;
@@ -172,9 +178,16 @@ public class FirebaseManager {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 List<Schedule> results = new ArrayList<>();
+                Log.d(TAG, "onDataChange: CALLED");
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                    results.add(postSnapshot.getValue(Schedule.class));
+                    Schedule schedule = postSnapshot.getValue(Schedule.class);
 
+                    if (schedule != null && schedule.isTamdung()) {
+                        mNotifyInstance.showNotifyNow("Thông báo", "Môn học " + schedule.getTenHP() + " đã tạm dừng");
+                        postSnapshot.getRef().removeValue();
+                    } else {
+                        results.add(schedule);
+                    }
                 }
                 mScheduleData.postValue(results);
             }
@@ -184,9 +197,11 @@ public class FirebaseManager {
                 Log.d(TAG, "loadPost:onCancelled", error.toException());
             }
         });
-
-
     }
 
+    public void onPauseSchedule(Schedule scheduleDelete) {
+        scheduleDelete.setTamdung(true);
+        mScheduleFref.child(scheduleDelete.getId()).setValue(scheduleDelete);
+    }
 
 }

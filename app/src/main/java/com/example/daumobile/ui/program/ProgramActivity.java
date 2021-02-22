@@ -34,7 +34,7 @@ public class ProgramActivity extends AppCompatActivity {
     }
 
     private void setViews() {
-        mFirebaseManager = FirebaseManager.getInstance();
+        mFirebaseManager = FirebaseManager.getInstance(this);
         mPrograms = new ArrayList<>();
         mAdapter = new ProgramAdapter(mPrograms);
 

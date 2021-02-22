@@ -41,9 +41,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
     }
 
     @Override
-    protected void onViewReady(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-
-    }
+    protected void onViewReady(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) { }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +66,14 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
 
     private void generateData() {
         mHomeItems = new ArrayList<>();
-        if (currentPeople.getType() == PEOPLE_TYPE.STUDENT.getValue()) {
-            HomeItem item1 = new HomeItem();
-            HomeItem item2 = new HomeItem();
-            HomeItem item3 = new HomeItem();
-            HomeItem item4 = new HomeItem();
-            HomeItem item5 = new HomeItem();
-            HomeItem item6 = new HomeItem();
+        HomeItem item1 = new HomeItem();
+        HomeItem item2 = new HomeItem();
+        HomeItem item3 = new HomeItem();
 
+        HomeItem item4 = new HomeItem();
+        HomeItem item5 = new HomeItem();
+        HomeItem item6 = new HomeItem();
+        if (currentPeople.getType() == PEOPLE_TYPE.STUDENT.getValue()) {
             item1.setName(Constants.MENU_XEMDIEM);
             item2.setName(Constants.MENU_THOIKHOABIEU);
             item3.setName(Constants.MENU_LICHTHI);
@@ -97,10 +95,6 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
             mHomeItems.add(item5);
             mHomeItems.add(item6);
         } else {
-            HomeItem item1 = new HomeItem();
-            HomeItem item2 = new HomeItem();
-            HomeItem item3 = new HomeItem();
-
             item1.setName(Constants.MENU_LICHDAY);
             item2.setName(Constants.MENU_THONGTINCANHAN);
             item3.setName(Constants.MENU_DANGXUAT);

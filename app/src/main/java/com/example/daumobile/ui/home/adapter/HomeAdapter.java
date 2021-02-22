@@ -59,7 +59,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
             binding.getRoot().setOnClickListener(v -> {
                 mListener.onItemClicked(getItem(getAdapterPosition()));
-                Toast.makeText(binding.getRoot().getContext(), "Clicked " + getItem(getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(binding.getRoot().getContext(), "Clicked " + getItem(getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
             });
         }
 

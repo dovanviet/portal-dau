@@ -38,7 +38,7 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
         binding = ActivityScheduleBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        mFirebaseManager = FirebaseManager.getInstance();
+        mFirebaseManager = FirebaseManager.getInstance(this);
         receiverData();
         setViews();
         setListeners();
@@ -98,6 +98,7 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
 
     private void setListeners() {
         mFirebaseManager.getScheduleData().observe(this, schedulers -> {
+            Log.d(TAG, "setListeners: 1 ???? " + mSchedulers.size());
             mSchedulers.clear();
 
             for(Schedule schedule : schedulers) {
@@ -110,6 +111,7 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
                 }
             }
 
+            Log.d(TAG, "setListeners: 2 ???? " + mSchedulers.size());
             mAdapter.updateList(mSchedulers);
         });
     }
@@ -125,6 +127,6 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
         // Pause and sends notify to users
 //        FirebaseDatabase.getInstance().getReference().child("")
         mAdapter.deleteItemAt(position);
-        mSchedulers.remove(position);
+        mFirebaseManager.onPauseSchedule(mSchedulers.get(position));
     }
 }

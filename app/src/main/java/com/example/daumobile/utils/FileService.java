@@ -3,6 +3,8 @@ package com.example.daumobile.utils;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.example.daumobile.database.FirebaseManager;
 import com.example.daumobile.model.Point;
 import com.example.daumobile.model.Program;
@@ -14,9 +16,21 @@ import java.io.InputStreamReader;
 
 public class FileService {
     private static final String TAG = "__LOG_FILE";
-    private static FirebaseManager mFirebaseManager = FirebaseManager.getInstance();
+    private static FileService mInstance;
+    private FirebaseManager mFirebaseManager;
 
-    public static void readPoint(Context context) {
+    private FileService(@NonNull Context context) {
+        mFirebaseManager = FirebaseManager.getInstance(context);
+    }
+
+    public static FileService getInstance(@NonNull Context context) {
+        if (mInstance == null) {
+            mInstance = new FileService(context);
+        }
+        return mInstance;
+    }
+
+    public void readPoint(Context context) {
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(context.getAssets().open("diem.dat"), "UTF-8"))) {
 
@@ -56,7 +70,7 @@ public class FileService {
         }
     }
 
-    public static void readProgram(Context context) {
+    public void readProgram(Context context) {
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(context.getAssets().open("chuongtrinhdaotao.dat"), "UTF-8"))) {
 
@@ -85,7 +99,7 @@ public class FileService {
         }
     }
 
-    public static void readSchedule(Context context) {
+    public void readSchedule(Context context) {
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(context.getAssets().open("lichhoc.dat"), "UTF-8"))) {
 

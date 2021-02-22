@@ -39,10 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 //        FileService.readProgram(this);
 //        FileService.readSchedule(this);
 
-        mFirebaseManager = FirebaseManager.getInstance();
-
-        //mssv, String tenHp, int tinChi, double diemTrungBinh,double diemLan1,double diemLan2
-//        mFirebaseManager.addPoint(new Point("123", "tenHP", 3, 3.3,3,0));
+        mFirebaseManager = FirebaseManager.getInstance(this);
         setListeners();
     }
 
@@ -95,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         mFirebaseManager.getUserData().observe(this, people -> {
+            Log.d(TAG, "setListeners: " + people);
             mPeople = people;
         });
     }
