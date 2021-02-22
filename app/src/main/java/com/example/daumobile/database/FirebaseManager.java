@@ -71,20 +71,23 @@ public class FirebaseManager {
     }
 
     public void initData() {
-        Student student1 = new Student("1651120028", "123", "do van viet", "quang nam", "0945112445","16CT");
-        Student student2 = new Student("345", "123", "bui vinh khai", "da nang", "0933527563","16CT");
-        Student student3 = new Student("456", "123", "nguyen thanh long", "quang tri", "09334347563","16CT");
-
-        Teacher teacher1 = new Teacher("111", "111", "Giao vien 1", "quang nam", "0945112445","Nhap Mon Lap Trinh");
-        Teacher teacher2 = new Teacher("112", "111", "Giao vien 2", "ha noi", "0935369253","Lap trinh web");
-        Teacher teacher3 = new Teacher("113", "111", "Giao vien 3", "ha noi", "0935449253","Lap trinh java");
+        Student student1 = new Student("1651120023", "123", "Đỗ Văn Việt", "quang nam", "0945112445","16CT");
+        Student student2 = new Student("1651120024", "123", "Đoàn Xuân Lộc", "da nang", "0933527563","16CT");
+        Student student3 = new Student("1651120028", "123", "Nguyễn Thanh Long", "quang tri", "09334347563","16CT");
+        Student student4 = new Student("1651120030", "123", "Trần Phước Lý", "quang tri", "09334347563","16CT");
+        Teacher teacher1 = new Teacher("111", "111", "Huỳnh Hữu Hưng", "quang nam", "0945112445","Lập trình hệ thống");
+        Teacher teacher2 = new Teacher("112", "111", "Hoàng Thị Mỹ Lệ", "ha noi", "0935369253","Công nghệ phần mềm ");
+        Teacher teacher3 = new Teacher("113", "111", "Đặng Hùng Vĩ", "ha noi", "0935449253","Mạng máy tính");
+        Teacher teacher4 = new Teacher("114", "111", "Trương Ngọc Châu", "ha noi", "0935449253","Chương trình dịch");
 
         addUser(student1);
         addUser(student2);
         addUser(student3);
+        addUser(student4);
         addUser(teacher1);
         addUser(teacher2);
         addUser(teacher3);
+        addUser(teacher4);
     }
 
     public void addUser(People people) {
