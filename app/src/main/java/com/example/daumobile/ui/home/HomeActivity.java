@@ -141,6 +141,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
                 intent = new Intent(this, ProgramActivity.class);
                 intent.putExtra(Constants.IT_PEOPLE, currentPeople);
                 startActivity(intent);
+                break;
             case Constants.MENU_LICHDAY:
                 intent = new Intent(this, ScheduleActivity.class);
                 intent.putExtra(Constants.IT_PEOPLE, currentPeople);
