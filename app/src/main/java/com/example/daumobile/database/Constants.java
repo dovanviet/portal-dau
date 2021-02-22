@@ -45,4 +45,7 @@ public class Constants {
     public static final String LICH_THI = "Lịch thi";
     public static final String LICH_DAY = "Lịch dạy";
     public static final String THOI_KHOA_BIEU = "Thời khoá biểu";
+
+    public static final int MIN_SEMESTER = 1;
+    public static final int MAX_SEMESTER = 9;
 }

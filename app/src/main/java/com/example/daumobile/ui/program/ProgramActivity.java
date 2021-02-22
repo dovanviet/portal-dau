@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.daumobile.database.Constants;
 import com.example.daumobile.database.FirebaseManager;
@@ -20,8 +21,11 @@ public class ProgramActivity extends AppCompatActivity {
 
     private FirebaseManager mFirebaseManager;
     private List<Program> mPrograms;
+    private List<Program> mCurrentPrograms;
     private ProgramAdapter mAdapter;
     private ActivityProgramBinding binding;
+
+    private int currentSemester = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,8 @@ public class ProgramActivity extends AppCompatActivity {
     private void setViews() {
         mFirebaseManager = FirebaseManager.getInstance(this);
         mPrograms = new ArrayList<>();
-        mAdapter = new ProgramAdapter(mPrograms);
+        mCurrentPrograms = new ArrayList<>();
+        mAdapter = new ProgramAdapter(mCurrentPrograms);
 
         binding.recyclerviewProgram.setAdapter(mAdapter);
         binding.recyclerviewProgram.setLayoutManager(new LinearLayoutManager(this));
@@ -50,7 +55,33 @@ public class ProgramActivity extends AppCompatActivity {
         mFirebaseManager.getProgramData().observe(this, programs -> {
             mPrograms = programs;
 
-            mAdapter.updateList(mPrograms);
+            updateSemester();
         });
+
+        binding.imgProgramPlusSemester.setOnClickListener(view -> {
+            if (currentSemester <= Constants.MAX_SEMESTER) {
+                currentSemester++;
+                updateSemester();
+            }
+        });
+
+        binding.imgProgramSubSemester.setOnClickListener(view -> {
+            if (currentSemester >= Constants.MIN_SEMESTER) {
+                currentSemester--;
+                updateSemester();
+            }
+        });
+    }
+
+    private void updateSemester() {
+        mCurrentPrograms.clear();
+
+        for (Program program: mPrograms) {
+            if (program.getHocky() == currentSemester) {
+                mCurrentPrograms.add(program);
+            }
+        }
+
+        mAdapter.updateList(mCurrentPrograms);
     }
 }

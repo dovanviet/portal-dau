@@ -18,6 +18,7 @@ import com.example.daumobile.model.Schedule;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
 import com.example.daumobile.model.authen.Teacher;
+import com.example.daumobile.utils.DialogHandler;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ import java.util.List;
 public class ScheduleActivity extends AppCompatActivity implements IListenerItemClicked {
     private ActivityScheduleBinding binding;
     private FirebaseManager mFirebaseManager;
+    private DialogHandler mDialogHandler;
     private ScheduleAdapter mAdapter;
     private List<Schedule> mSchedulers;
     private People mUser;
@@ -39,6 +41,7 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
         setContentView(binding.getRoot());
 
         mFirebaseManager = FirebaseManager.getInstance(this);
+        mDialogHandler = DialogHandler.getInstance();
         receiverData();
         setViews();
         setListeners();
@@ -98,7 +101,6 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
 
     private void setListeners() {
         mFirebaseManager.getScheduleData().observe(this, schedulers -> {
-            Log.d(TAG, "setListeners: 1 ???? " + mSchedulers.size());
             mSchedulers.clear();
 
             for(Schedule schedule : schedulers) {
@@ -114,6 +116,13 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
             Log.d(TAG, "setListeners: 2 ???? " + mSchedulers.size());
             mAdapter.updateList(mSchedulers);
         });
+
+        binding.btnWeek.setOnClickListener( v -> {
+            Toast.makeText(this, "Chọn tuần", Toast.LENGTH_SHORT).show();
+        });
+        binding.btnTime.setOnClickListener( v -> {
+            Toast.makeText(this, "Chọn thời gian", Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
@@ -125,7 +134,6 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
     public void onItemPauseClicked(int position) {
         Toast.makeText(this, "Pause at " + mSchedulers.get(position).getTenHP(), Toast.LENGTH_SHORT).show();
         // Pause and sends notify to users
-//        FirebaseDatabase.getInstance().getReference().child("")
         mAdapter.deleteItemAt(position);
         mFirebaseManager.onPauseSchedule(mSchedulers.get(position));
     }
