@@ -118,6 +118,7 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
         });
 
         binding.btnWeek.setOnClickListener( v -> {
+            ArrayList<Integer> weeks = new ArrayList<>();
             Toast.makeText(this, "Chọn tuần", Toast.LENGTH_SHORT).show();
         });
         binding.btnTime.setOnClickListener( v -> {

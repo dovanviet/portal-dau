@@ -12,6 +12,7 @@ import com.example.daumobile.database.Constants;
 import com.example.daumobile.database.FirebaseManager;
 import com.example.daumobile.databinding.ActivityPointBinding;
 import com.example.daumobile.model.Point;
+import com.example.daumobile.model.Program;
 import com.example.daumobile.model.User;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
@@ -24,7 +25,10 @@ public class PointActivity extends AppCompatActivity implements IListenerItemCli
     private FirebaseManager mFirebaseManager;
     private PointAdapter mAdapter;
     private List<Point> mPoints;
+    private List<Point> mCurrentPoints;
     private People mUser;
+
+    private int currentSemester = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +50,7 @@ public class PointActivity extends AppCompatActivity implements IListenerItemCli
         }
     }
 
-    private void setViews(){
+    private void setViews() {
         mFirebaseManager = FirebaseManager.getInstance(this);
         mPoints = new ArrayList<>();
         mAdapter = new PointAdapter(this, mPoints, this);
@@ -63,13 +67,39 @@ public class PointActivity extends AppCompatActivity implements IListenerItemCli
         mFirebaseManager.getPointData().observe(this, points -> {
             mPoints.clear();
 
-            for (Point point: points) {
-                if (mUser instanceof Student && point.getMssv().toLowerCase().contains(((Student)mUser).getId().toLowerCase()) ) {
+            for (Point point : points) {
+                if (mUser instanceof Student && point.getMssv().toLowerCase().contains(((Student) mUser).getId().toLowerCase())) {
                     mPoints.add(point);
                 }
             }
+            updateSemester();
+//            mAdapter.updateList(mPoints);
+        });
 
-            mAdapter.updateList(mPoints);
+        binding.imgPointPlusSemester.setOnClickListener(v -> {
+            if (currentSemester <= Constants.MAX_SEMESTER) {
+                currentSemester++;
+                updateSemester();
+                binding.tvPointNameSemester.setText("Học kỳ " + currentSemester);
+            }
+        });
+        binding.imgPointSubSemester.setOnClickListener(v -> {
+            if (currentSemester >= Constants.MIN_SEMESTER) {
+                currentSemester--;
+                updateSemester();
+                binding.tvPointNameSemester.setText("Học kỳ " + currentSemester);
+            }
         });
     }
+
+    private void updateSemester() {
+        mCurrentPoints.clear();
+
+        for (Point point : mPoints) {
+            if (point.getHocKy() == currentSemester)
+                mCurrentPoints.add(point);
+        }
+        mAdapter.updateList(mCurrentPoints);
+    }
+
 }

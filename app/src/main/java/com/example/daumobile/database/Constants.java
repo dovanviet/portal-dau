@@ -48,4 +48,8 @@ public class Constants {
 
     public static final int MIN_SEMESTER = 1;
     public static final int MAX_SEMESTER = 9;
+
+    public static final String PREF_SEMESTER = "PREF_SEMESTER";
+    public static final String PREF_WEEK = "PREF_WEEK";
+    public static final String PREF_YEAR = "PREF_YEAR";
 }

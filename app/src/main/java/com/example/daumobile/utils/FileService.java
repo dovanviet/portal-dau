@@ -48,6 +48,7 @@ public class FileService {
                 double diemTb = Integer.parseInt(splits[3].trim());
                 String diem1 = splits[4].trim();
                 String diem2 = "";
+                int hocKy = Integer.parseInt(splits[6].trim());
 
                 if (splits.length > 5) {
                     diem2 = splits[5].trim();
@@ -62,7 +63,7 @@ public class FileService {
                     diemDb2 = Double.parseDouble(diem2);
                 }
 
-                Point point = new Point(mssv, tenHp, tinChi, diemTb, diemDb1, diemDb2);
+                Point point = new Point(mssv, tenHp, tinChi, diemTb, diemDb1, diemDb2, hocKy);
                 mFirebaseManager.addPoint(point);
             }
         } catch (IOException e) {

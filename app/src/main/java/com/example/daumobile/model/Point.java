@@ -12,7 +12,7 @@ public class Point {
     double diemTrungBinh;
     double diemLan1;
     double diemLan2;
-
+    int hocKy;
 
     @Override
     public boolean equals(Object o) {
@@ -89,6 +89,14 @@ public class Point {
         this.diemLan2 = diemLan2;
     }
 
+    public int getHocKy() {
+        return hocKy;
+    }
+
+    public void setHocKy(int hocKy) {
+        this.hocKy = hocKy;
+    }
+
     public Point() {
     }
 
@@ -102,13 +110,14 @@ public class Point {
         this.diemLan2 = diemLan2;
     }
 
-    public Point(String mssv, String tenHp, int tinChi, double diemTrungBinh,double diemLan1,double diemLan2) {
+    public Point(String mssv, String tenHp, int tinChi, double diemTrungBinh,double diemLan1,double diemLan2, int hocKy) {
         this.mssv = mssv;
         this.tenHp = tenHp;
         this.tinChi = tinChi;
         this.diemTrungBinh = diemTrungBinh;
         this.diemLan1 = diemLan1;
         this.diemLan2 = diemLan2;
+        this.hocKy = hocKy;
     }
 
     @Override

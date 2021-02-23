@@ -62,6 +62,7 @@ public class ProgramActivity extends AppCompatActivity {
             if (currentSemester <= Constants.MAX_SEMESTER) {
                 currentSemester++;
                 updateSemester();
+                binding.tvProgramNameSemester.setText("Học kỳ " + currentSemester);
             }
         });
 
@@ -69,6 +70,7 @@ public class ProgramActivity extends AppCompatActivity {
             if (currentSemester >= Constants.MIN_SEMESTER) {
                 currentSemester--;
                 updateSemester();
+                binding.tvProgramNameSemester.setText("Học kỳ " + currentSemester);
             }
         });
     }
