@@ -17,7 +17,7 @@ public class DialogHandler {
     }
 
 
-    public void singleChoiceDialog(Context context, ArrayList<?> arrayList, int defaultSelected, String title, String message, String strOk, String strCancel, final OnDialogSelectorListener listener) {
+    public void singleChoiceDialog(Context context, ArrayList<?> arrayList, int defaultSelected, String title, String strOk, String strCancel, final OnDialogSelectorListener listener) {
         ArrayAdapter<?> arrayAdapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_single_choice, arrayList);
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         alertDialog.setTitle(title);

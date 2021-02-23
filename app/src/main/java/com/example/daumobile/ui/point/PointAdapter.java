@@ -24,7 +24,7 @@ public class PointAdapter extends RecyclerView.Adapter<PointAdapter.ViewHolder> 
         currentList= list;
         mListener = listener;
 
-        mUtility = Utility.getInstance(context);
+        mUtility = Utility.getInstance();
     }
 
     private Point getItem(int position) {

@@ -1,22 +1,20 @@
 package com.example.daumobile.utils;
 
-import android.content.Context;
-
 import com.example.daumobile.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Utility {
     private static Utility INSTANCE;
-    private Context mContext;
 
-    private Utility(Context context) {
-        mContext = context;
+    private Utility() {
+
     }
 
-    public static Utility getInstance(Context context) {
+    public static Utility getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new Utility(context);
+            INSTANCE = new Utility();
         }
         return INSTANCE;
     }
@@ -59,17 +57,66 @@ public class Utility {
         return tong_diem / (tong_tin_chi * 1.0);
     }
 
-    public int getPositionInWeekArray(ArrayList<Integer> arrayWeek, int currentWeek){
+    public int getPositionInArray(ArrayList<Integer> array, int  value){
         int position = -1;
-
-        for(int i = 0 ; i < arrayWeek.size() ; i++){
-            if (arrayWeek.get(i) == currentWeek) {
+        for(int i = 0 ; i < array.size() ; i++){
+            if (array.get(i) == value) {
                 position = i;
                 break;
             }
         }
 
         return position;
+    }
+
+    public int getPositionInArray(ArrayList<String> array, String value) {
+        int position = -1;
+        for(int i = 0 ; i < array.size() ; i++){
+            if (array.get(i).equals(value)) {
+                position = i;
+                break;
+            }
+        }
+
+        return position;
+    }
+
+    public List<Integer> getWeekListForSemester(int semester) {
+        List<Integer> results = new ArrayList<>();
+        int start = 1, end = 20;
+        if (semester == 2) {
+            start = 21;
+            end = 43;
+        } else if (semester > 2) {
+            start = 44;
+            end = 52;
+        }
+
+        for(int index = start; index <= end; index++) {
+            results.add(index);
+        }
+
+        return results;
+    }
+
+    public List<String> getYearList(int start, int end) {
+        List<String> results = new ArrayList<>();
+
+        for(int index = start; index <= end ; index++){
+            String value = index + "-" + (index+1);
+            results.add(value);
+        }
+
+        return results;
+    }
+
+    public List<Integer> getSemester() {
+        List<Integer> results = new ArrayList<>();
+        results.add(1);
+        results.add(2);
+        results.add(3);
+
+        return results;
     }
 
 }

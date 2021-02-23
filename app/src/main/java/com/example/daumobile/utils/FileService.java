@@ -129,6 +129,7 @@ public class FileService {
                 String hocKy = splits[12].trim();
                 String nam = splits[13].trim();
                 String tamDung = splits[14].trim();
+                String tuan = splits[15].trim();
 
                 boolean tamdungB = false;
                 if (!tamDung.equals("0")) {
@@ -137,9 +138,10 @@ public class FileService {
                 long thoiGianI = System.currentTimeMillis();
                 int soTietI = Integer.parseInt(soTiet);
                 int soTinChiI = Integer.parseInt(stc);
+                int tuanI = Integer.parseInt(tuan);
 
                 //String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, int thoiGian, String buoi, String tiet, boolean tamdung
-                Schedule schedule = new Schedule(maHP, tenHP, loaiHP, soTinChiI, lopHoc, soTietI, giangVien, ngayHoc, thoiGianI, buoi, tiet, tamdungB, hocKy, nam, phong);
+                Schedule schedule = new Schedule(maHP, tenHP, loaiHP, soTinChiI, lopHoc, soTietI, giangVien, ngayHoc, thoiGianI, buoi, tiet, tamdungB, hocKy, nam, phong,tuanI);
                 mFirebaseManager.addSchedule(schedule);
             }
         } catch (IOException e) {

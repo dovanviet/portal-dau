@@ -19,6 +19,7 @@ public class Schedule {
     String hocky;
     String nam;
     String phong;
+    int tuan;
 
     public String getId() {
         return id;
@@ -148,7 +149,15 @@ public class Schedule {
         this.phong = phong;
     }
 
-    public Schedule(String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, long thoiGian, String buoi, String tiet, boolean tamdung, String hocky, String nam, String phong) {
+    public int getTuan() {
+        return tuan;
+    }
+
+    public void setTuan(int tuan) {
+        this.tuan = tuan;
+    }
+
+    public Schedule(String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, long thoiGian, String buoi, String tiet, boolean tamdung, String hocky, String nam, String phong, int tuan) {
         this.maHP = maHP;
         this.tenHP = tenHP;
         this.loaiHP = loaiHP;
@@ -164,9 +173,10 @@ public class Schedule {
         this.hocky = hocky;
         this.nam = nam;
         this.phong = phong;
+        this.tuan = tuan;
     }
 
-    public Schedule(String id, String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, long thoiGian, String buoi, String tiet, boolean tamdung, String hocky, String nam, String phong) {
+    public Schedule(String id, String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, long thoiGian, String buoi, String tiet, boolean tamdung, String hocky, String nam, String phong, int tuan) {
         this.id = id;
         this.maHP = maHP;
         this.tenHP = tenHP;
@@ -183,6 +193,7 @@ public class Schedule {
         this.hocky = hocky;
         this.nam = nam;
         this.phong = phong;
+        this.tuan = tuan;
     }
 
     public Schedule() {

@@ -46,7 +46,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:padding="5dp"
-            android:text="2018 - 2019 / HK1"
+            android:text="2018-2019 / HK1"
             android:textColor="@color/White"
             android:textSize="16sp" />
 

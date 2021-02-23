@@ -19,21 +19,27 @@ import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
 import com.example.daumobile.model.authen.Teacher;
 import com.example.daumobile.utils.DialogHandler;
-import com.google.firebase.database.FirebaseDatabase;
+import com.example.daumobile.utils.SharePrefUtils;
+import com.example.daumobile.utils.Utility;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ScheduleActivity extends AppCompatActivity implements IListenerItemClicked {
     private ActivityScheduleBinding binding;
     private FirebaseManager mFirebaseManager;
     private DialogHandler mDialogHandler;
+    private SharePrefUtils mSharePrefs;
+    private Utility mUtils;
     private ScheduleAdapter mAdapter;
     private List<Schedule> mSchedulers;
+    private List<Schedule> mCurrentSchedulers;
     private People mUser;
     private String mTypeOfSchedule = Constants.THOI_KHOA_BIEU;
 
     private static final String TAG = "__ScheduleActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +48,8 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
 
         mFirebaseManager = FirebaseManager.getInstance(this);
         mDialogHandler = DialogHandler.getInstance();
+        mSharePrefs = SharePrefUtils.getInstance(this);
+        mUtils = Utility.getInstance();
         receiverData();
         setViews();
         setListeners();
@@ -83,10 +91,11 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
 
     private void setViews() {
         mSchedulers = new ArrayList<>();
+        mCurrentSchedulers = new ArrayList<>();
         if (mUser instanceof Student) {
-            mAdapter = new ScheduleAdapter(mSchedulers, this, false);
+            mAdapter = new ScheduleAdapter(mCurrentSchedulers, this, false);
         } else {
-            mAdapter = new ScheduleAdapter(mSchedulers, this, true);
+            mAdapter = new ScheduleAdapter(mCurrentSchedulers, this, true);
         }
 
         binding.recyclerviewSchedule.setAdapter(mAdapter);
@@ -97,14 +106,17 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
         binding.recyclerviewSchedule.addItemDecoration(dividerItemDecoration);
 
         binding.tvTitle.setText(mTypeOfSchedule);
+        binding.tvTime.setText(mSharePrefs.getYear() + " / HK" + mSharePrefs.getSemester());
+        binding.tvWeekValue.setText("Tuần " + mSharePrefs.getWeek());
+
     }
 
     private void setListeners() {
         mFirebaseManager.getScheduleData().observe(this, schedulers -> {
             mSchedulers.clear();
 
-            for(Schedule schedule : schedulers) {
-                if (mTypeOfSchedule.equals(Constants.THOI_KHOA_BIEU) &&  mUser instanceof Student && schedule.getLopHoc().toLowerCase().contains(((Student)mUser).getLopHoc().toLowerCase()) ) {
+            for (Schedule schedule : schedulers) {
+                if (mTypeOfSchedule.equals(Constants.THOI_KHOA_BIEU) && mUser instanceof Student && schedule.getLopHoc().toLowerCase().contains(((Student) mUser).getLopHoc().toLowerCase())) {
                     mSchedulers.add(schedule);
                 } else if (mTypeOfSchedule.equals(Constants.LICH_THI)) {
                     // NOTHING
@@ -112,18 +124,58 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
                     mSchedulers.add(schedule);
                 }
             }
-
+            updateData();
             Log.d(TAG, "setListeners: 2 ???? " + mSchedulers.size());
-            mAdapter.updateList(mSchedulers);
+//            mAdapter.updateList(mSchedulers);
         });
 
-        binding.btnWeek.setOnClickListener( v -> {
-            ArrayList<Integer> weeks = new ArrayList<>();
-            Toast.makeText(this, "Chọn tuần", Toast.LENGTH_SHORT).show();
+        binding.btnWeek.setOnClickListener(v -> {
+            List<Integer> weeks = mUtils.getWeekListForSemester(mSharePrefs.getSemester());
+            int position = mUtils.getPositionInArray((ArrayList<Integer>) weeks, mSharePrefs.getWeek());
+
+            mDialogHandler.singleChoiceDialog(this, (ArrayList<Integer>) weeks, position, "Chọn tuần", "Đồng ý", "Huỷ bỏ", selectedIndex -> {
+                binding.tvWeekValue.setText("Tuần " + weeks.get(selectedIndex));
+                mSharePrefs.saveWeek(weeks.get(selectedIndex));
+
+                updateData();
+            });
         });
-        binding.btnTime.setOnClickListener( v -> {
-            Toast.makeText(this, "Chọn thời gian", Toast.LENGTH_SHORT).show();
+        binding.btnTime.setOnClickListener(v -> {
+            List<String> years = mUtils.getYearList(2016, 2021);
+            List<Integer> semesters = mUtils.getSemester();
+
+            int positionYear = mUtils.getPositionInArray((ArrayList<String>) years, mSharePrefs.getYear());
+            int positionSemester = mUtils.getPositionInArray((ArrayList<Integer>) semesters, mSharePrefs.getSemester());
+
+            mDialogHandler.singleChoiceDialog(this, (ArrayList<String>) years, positionYear, "Chọn năm", "Đồng ý", "Huỷ bỏ", selectedIndex -> {
+                mDialogHandler.singleChoiceDialog(this, (ArrayList<Integer>) semesters, positionSemester, "Chọn học kỳ", "Đồng ý", "Huỷ bỏ", selectedSemesterIndex -> {
+                    String year = years.get(selectedIndex);
+                    int semester = semesters.get(selectedSemesterIndex);
+
+                    mSharePrefs.saveSemester(semester);
+                    mSharePrefs.saveYear(year);
+
+                    binding.tvTime.setText(year + " / HK" + semester);
+                    updateData();
+                });
+            });
         });
+    }
+
+    private void updateData() {
+        String year = mSharePrefs.getYear();
+        int semester = mSharePrefs.getSemester();
+        int week = mSharePrefs.getWeek();
+
+        mCurrentSchedulers.clear();
+
+        for(Schedule schedule : mSchedulers) {
+            if (schedule.getNam().equals(year) && schedule.getTuan() == week && Integer.parseInt(schedule.getHocky()) == semester) {
+                mCurrentSchedulers.add(schedule);
+            }
+        }
+
+        mAdapter.updateList(mCurrentSchedulers);
     }
 
     @Override
