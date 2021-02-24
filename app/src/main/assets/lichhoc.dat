@@ -1,28 +1,204 @@
-//Mã lớp HP -> Tên học phần-> Loại học phần ->STC-> lớp học -> số tiết -> giảng viên -> ngày học -> buổi -> tiết -> phòng -> thời gian -> học kỳ -> Năm -> tạm dừng 
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
-SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 3, 5÷6, 9 -> 1 -> 2018-2019 -> 0
+//Mã lớp HP -> Tên học phần-> Loại học phần ->STC-> lớp học -> số tiết -> giảng viên -> ngày học -> buổi -> tiết -> phòng -> thời gian -> học kỳ -> Năm -> tạm dừng ->Tuần
+
+SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 1535380672 ->1 -> 2018-2019 -> 0 -> 3
+SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 1536590272 ->1 -> 2018-2019 -> 0-> 5
+SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 1537195072 ->1 -> 2018-2019 -> 0-> 6
+SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 201	-> 1539009472 ->1 -> 2018-2019 -> 0-> 9
+SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 302	-> 1543243072 ->1 -> 2018-2019 -> 0-> 16
+SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Hai -> sáng -> 1 - 4 -> 403	-> 1543847872 ->1 -> 2018-2019 -> 0-> 17
+SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Ba -> sáng -> 1 - 4 -> 406	-> 1540823872 ->1 -> 2018-2019 -> 0-> 17
+SYP201 ->Lập trình hệ thống ->Lý thuyết -> 3 -> 16CT -> 45 ->Huỳnh Hữu Hưng ->Thứ Tư -> sáng -> 1 - 4 -> 406	-> 1542033472 ->1 -> 2018-2019 -> 0-> 17
+
+SWE201 ->Công nghệ phần mềm ->Lý thuyết -> 3 -> 16CT -> 45-> Hoàng Thị Mỹ Lệ->Thứ Ba -> Chiều ->6 - 9-> 407 	->1542033472->1 -> 2018-2019 -> 0-> 1
+SWE201 ->Công nghệ phần mềm ->Lý thuyết -> 3 -> 16CT -> 45-> Hoàng Thị Mỹ Lệ->Thứ Ba -> Chiều ->6 - 9-> 407 	->1543329472->1 -> 2018-2019 -> 0-> 3
+SWE201 ->Công nghệ phần mềm ->Lý thuyết -> 3 -> 16CT ->	45-> Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều  ->6 - 9->	405     ->1539355072->1 -> 2018-2019 -> 0-> 4
+SWE201 ->Công nghệ phần mềm ->Lý thuyết -> 3 -> 16CT ->	45-> Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều  ->7 - 10->405     ->1539959872->1 -> 2018-2019 -> 0-> 5
+SWE201 ->Công nghệ phần mềm ->Lý thuyết -> 3 -> 16CT ->	45-> Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều  ->7 - 10->405     ->1541169472->1 -> 2018-2019 -> 0-> 6
+SWE201 ->Công nghệ phần mềm ->Lý thuyết -> 3 -> 16CT ->	45-> Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều  ->7 - 10->405     ->1541774272->1 -> 2018-2019 -> 0-> 7
+SWE201 ->Công nghệ phần mềm ->Lý thuyết -> 3 -> 16CT ->	45-> Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều  ->7 - 10->405     ->1542983872->1 -> 2018-2019 -> 0-> 8
+SWE201 ->Công nghệ phần mềm ->Lý thuyết -> 3 -> 16CT ->	45-> Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều  ->7 - 10->405     ->1544193472->1 -> 2018-2019 -> 0-> 9
+SWE201 ->Công nghệ phần mềm ->Lý thuyết -> 3 -> 16CT ->	45-> Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều  ->7 - 10->405     ->1544798272->1 -> 2018-2019 -> 0-> 16
+
+CPN201->Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Tư->	Chiều->	6 - 9->403->1535539909->1 -> 2018-2019 -> 0-> 3
+CPN201->Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Bảy->	Sáng->	1 - 4->403->1536403909->1 -> 2018-2019 -> 0-> 4
+CPN201->Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Bảy->	Sáng->	1 - 4->403->1537613509->1 -> 2018-2019 -> 0-> 5
+CPN201->Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Bảy->	Sáng->	1 - 4->403->1538823109->1 -> 2018-2019 -> 0-> 6
+CPN201->Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Bảy->	Sáng->	1 - 4->403->1539427909->1 -> 2018-2019 -> 0-> 8
+CPN201->Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Bảy->	Sáng->	1 - 4->403->1541242309->1 -> 2018-2019 -> 0-> 9
+CPN201->Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Bảy->	Sáng->	1 - 4->403->1541847109->1 -> 2018-2019 -> 0-> 12
+CPN201->Mạng máy tính->	Lý thuyết->	3->	16CT->	45->	Đặng Hùng Vĩ->	Thứ Bảy->	Sáng->	1 - 4->403->1542451909->1 -> 2018-2019 -> 0-> 14
+
+WEB201->Lập trình Web->	Lý thuyết->	3->	16CT->	45->	Nguyễn Thị Xuân Thủy	->Thứ Năm	->Chiều->	6 - 10->208->1539255109->1 -> 2018-2019 -> 0-> 9
+WEB201->Lập trình Web->	Lý thuyết->	3->	16CT->	45->	Nguyễn Thị Xuân Thủy	->Thứ Năm	->Chiều->	6 - 10->208->1539859909->1 -> 2018-2019 -> 0-> 10
+WEB201->Lập trình Web->	Lý thuyết->	3->	16CT->	45->	Nguyễn Thị Xuân Thủy	->Thứ Năm	->Chiều->	6 - 10->208->1541069509->1 -> 2018-2019 -> 0-> 12
+WEB201->Lập trình Web->	Lý thuyết->	3->	16CT->	45->	Nguyễn Thị Xuân Thủy	->Thứ Năm	->Chiều->	6 - 10->208->1542279109->1 -> 2018-2019 -> 0-> 14
+WEB201->Lập trình Web->	Lý thuyết->	3->	16CT->	45->	Nguyễn Thị Xuân Thủy	->Thứ Năm	->Chiều->	6 - 10->208->1542883909->1 -> 2018-2019 -> 0-> 15
+WEB201->Lập trình Web->	Lý thuyết->	3->	16CT->	45->	Nguyễn Thị Xuân Thủy	->Thứ Năm	->Chiều->	6 - 10->208->1543488709->1 -> 2018-2019 -> 0-> 16
+WEB201->Lập trình Web->	Lý thuyết->	3->	16CT->	45->	Nguyễn Thị Xuân Thủy	->Thứ Năm	->Chiều->	6 - 10->208->1544093509->1 -> 2018-2019 -> 0-> 17
+WEB201->Lập trình Web->	Lý thuyết->	3->	16CT->	45->	Nguyễn Thị Xuân Thủy	->Thứ Năm	->Chiều->	6 - 10->208->1544698309->1 -> 2018-2019 -> 0 -> 18
+
+
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1534589509->1 -> 2018-2019 -> 0->1
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1535194309->1 -> 2018-2019 -> 0->2
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1536403909->1 -> 2018-2019 -> 0->4
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1537008709->1 -> 2018-2019 -> 0->5
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1537613509->1 -> 2018-2019 -> 0->6
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1538218309->1 -> 2018-2019 -> 0->7
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1538823109->1 -> 2018-2019 -> 0->8
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1539427909->1 -> 2018-2019 -> 0->9
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1540032709->1 -> 2018-2019 -> 0->10
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Chiều->6 - 9->	201->1543056709->1 -> 2018-2019 -> 0->15
+CPL201->Chương trình dịch->	Lý thuyết->	3->	16CT->	45->Trương Ngọc Châu->Thứ Bảy->Sáng->1 - 5->	201->1543056709->1 -> 2018-2019 -> 0->15
+
+
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Năm->Sáng->	1 - 2->	TD5->1535626309->1 -> 2018-2019 -> 0-> 3
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Năm->Sáng->	1 - 2->	TD5->1536231109->1 -> 2018-2019 -> 0-> 4
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Năm->Sáng->	1 - 2->	TD5->1536835909->1 -> 2018-2019 -> 0-> 5
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Năm->Sáng->	1 - 2->	TD5->1537440709->1 -> 2018-2019 -> 0-> 6
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Năm->Sáng->	1 - 2->	TD5->1538045509->1 -> 2018-2019 -> 0-> 7
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Năm->Sáng->	1 - 2->	TD5->1538650309->1 -> 2018-2019 -> 0-> 8
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Sáu->Sáng->	1 - 2->	TD5->1539255109->1 -> 2018-2019 -> 0-> 9
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Sáu->Sáng->	1 - 2->	TD5->1539859909->1 -> 2018-2019 -> 0-> 10
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Sáu->Sáng->	1 - 2->	TD5->1541069509->1 -> 2018-2019 -> 0-> 12
+PHE105->Giáo dục thể chất 5->	Thực hành->	1->	16CT->	20->Phạm Văn Tiến->Thứ Sáu->Sáng->	1 - 2->	TD5->1541674309->1 -> 2018-2019 -> 0-> 13
+
+
+SWE201->Công nghệ phần mềm->Lý thuyết->	3->16CT->	45->	Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều->6 - 10->405->1539341509->1 ->2018-2019 -> 0-> 1
+SWE201->Công nghệ phần mềm->Lý thuyết->	3->16CT->	45->	Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều->6 - 10->405->1539946309->1 ->2018-2019 -> 0-> 3
+SWE201->Công nghệ phần mềm->Lý thuyết->	3->16CT->	45->	Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều->6 - 10->405->1541155909->1 ->2018-2019 -> 0-> 4
+SWE201->Công nghệ phần mềm->Lý thuyết->	3->16CT->	45->	Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều->6 - 10->405->1541760709->1 ->2018-2019 -> 0-> 5
+SWE201->Công nghệ phần mềm->Lý thuyết->	3->16CT->	45->	Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều->6 - 10->405->1542365509->1 ->2018-2019 -> 0-> 6
+SWE201->Công nghệ phần mềm->Lý thuyết->	3->16CT->	45->	Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều->6 - 10->405->1542970309->1 ->2018-2019 -> 0-> 7
+SWE201->Công nghệ phần mềm->Lý thuyết->	3->16CT->	45->	Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều->6 - 10->405->1543575109->1 ->2018-2019 -> 0-> 8
+SWE201->Công nghệ phần mềm->Lý thuyết->	3->16CT->	45->	Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều->6 - 10->405->1544179909->1 ->2018-2019 -> 0-> 9
+SWE201->Công nghệ phần mềm->Lý thuyết->	3->16CT->	45->	Hoàng Thị Mỹ Lệ->Thứ Sáu->Chiều->6 - 10->405->1544784709->1 ->2018-2019 -> 0-> 16
+
+
+
+
+SH0005 ->Sinh hoạt lớp HK5 -> Lý thuyết -> 0-> 16CT -> 5 -> Nguyễn Thị Vũ Thảo->Thứ Ba ->	Chiều->10-10 ->	512	->1535453509->1 -> 2018-2019-> 0 -> 3
+SH0005 ->Sinh hoạt lớp HK5 -> Lý thuyết -> 0-> 16CT -> 5 -> Nguyễn Thị Vũ Thảo->Thứ Ba ->	Chiều->10-10 ->	512	->1537267909->1 -> 2018-2019-> 0 -> 6
+
+
+
+
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Năm	->Sáng->	1 - 4->	606->1539255109 ->1 -> 2018-2019 -> 0->1
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Năm	->Sáng->	1 - 4->	606->1539859909 ->1 -> 2018-2019 -> 0->3
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Năm	->Sáng->	1 - 4->	606->1540464709 ->1 -> 2018-2019 -> 0->4
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Sáu	->Chiều->	6 - 9->	405->1534503109->1-> 2018-2019 -> 0->5
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Sáu	->Chiều->	6 - 9->	405->1535712709->1-> 2018-2019 -> 0->6
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Sáu	->Chiều->	6 - 9->	405->1536317509->1-> 2018-2019 -> 0->7
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Sáu	->Chiều->	6 - 9->	405->1536922309->1-> 2018-2019 -> 0->8
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Sáu	->Chiều->	6 - 9->	405->1537527109->1-> 2018-2019 -> 0->9
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Sáu	->Chiều->	6 - 9->	405->1538131909->1-> 2018-2019 -> 0->10
+DMS201->Hệ quản trị cơ sở dữ liệu->	Lý thuyết->	3->	16CT->	45->Nguyễn Văn Chức	->Thứ Sáu	->Chiều->	6 - 9->	405->1538736709->1-> 2018-2019 -> 0->13
+
+
+
+
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 10-> 506 -> 1540910272->1 -> 2018-2019 -> 0->1
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1539700672->1 -> 2018-2019 -> 0->3
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1540305472->1 -> 2018-2019 -> 0->4
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1541515072->1 -> 2018-2019 -> 0->5
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1534243909->1 -> 2018-2019 -> 0->6
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1535453509->1 -> 2018-2019 -> 0->7
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1536058309->1 -> 2018-2019 -> 0->8
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1536663109->1 -> 2018-2019 -> 0->10
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1537267909->1 -> 2018-2019 -> 0->11
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1537872709->1 -> 2018-2019 -> 0->12
+RCV101 ->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam -> Lý thuyết -> 3-> 16CT,16NT -> 45 ->Nguyễn Sanh Châu -> Thứ Ba -> Chiều -> 6 - 9 -> 506 -> 1538477509->1 -> 2018-2019 -> 0->13
+
+ENG201->Tiếng Anh chuyên ngành công nghệ thông tin->Lý thuyết->2->16CT->30->Nguyễn Trần Lan Chi->Thứ Hai->Sáng->1 - 5->404->1551696709->2 -> 2018-2019 -> 0->29
+ENG201->Tiếng Anh chuyên ngành công nghệ thông tin->Lý thuyết->2->16CT->30->Nguyễn Trần Lan Chi->Thứ Hai->Sáng->1 - 5->406->1551091909->2 -> 2018-2019 -> 0->30
+ENG201->Tiếng Anh chuyên ngành công nghệ thông tin->Lý thuyết->2->16CT->30->Nguyễn Trần Lan Chi->Thứ Tư-> Sáng->1 - 4->308->1547031109->2 -> 2018-2019 -> 0->39
+ENG201->Tiếng Anh chuyên ngành công nghệ thông tin->Lý thuyết->2->16CT->30->Nguyễn Trần Lan Chi->Thứ Tư-> Sáng->1 - 4->401->1546426309->2 -> 2018-2019 -> 0->37
+ENG201->Tiếng Anh chuyên ngành công nghệ thông tin->Lý thuyết->2->16CT->30->Nguyễn Trần Lan Chi->Thứ Hai->Chiều->6 - 9->306->1546858309->2-> 2018-2019 -> 0->22
+ENG201->Tiếng Anh chuyên ngành công nghệ thông tin->Lý thuyết->2->16CT->30->Nguyễn Trần Lan Chi->Thứ Hai->Chiều->6 - 9->306->1550487109->2-> 2018-2019 -> 0->28
+ENG201->Tiếng Anh chuyên ngành công nghệ thông tin->Lý thuyết->2->16CT->30->Nguyễn Trần Lan Chi->Thứ Sáu->Chiều->6 - 9->406->1551437509->2-> 2018-2019 -> 0->21
+ENG201->Tiếng Anh chuyên ngành công nghệ thông tin->Lý thuyết->2->16CT->30->Nguyễn Trần Lan Chi->Thứ Sáu->Sáng->6 - 9->406->1551437509->2-> 2018-2019 -> 0->21
+
+
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Hai->Sáng->1 - 5->201->1557758404->2 -> 2018-2019 -> 0->40
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Ba->Sáng->1 - 5->TT6->1557844804->2 -> 2018-2019 -> 0->40
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Tư ->Sáng->1 - 5->TT6->1557931204->2 -> 2018-2019 -> 0->40
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Năm ->Sáng->1 - 5->TT6->1557934804->2 -> 2018-2019 -> 0->40
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Sáu->Sáng->1 - 5->TT6->1558107604->2 -> 2018-2019 -> 0->41
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Hai->Sáng->1 - 5->TT6->1558366804->2 -> 2018-2019 -> 0->41
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Ba->Sáng->1 - 5->TT6->1558453204->2 -> 2018-2019 -> 0->41
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Tư->Sáng->1 - 5->TT6->1558539604->2 -> 2018-2019 -> 0->41
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Năm->Sáng->1 - 5->TT6->1558626004->2 -> 2018-2019 -> 0->41
+PRT201->Thực tập nghề nghiệp->Thực hành->2->16CT->50->Nguyễn Tất Phú Cường->Thứ Sáu->Sáng->1 - 5->TT6->1558712404->2 -> 2018-2019 -> 0->41
+
+OOD201->Thiết kế hệ thống hướng đối tượng->Lý thuyết->3->16CT->45->Lê Thị Mỹ Hạnh->Thứ Hai->Chiều->6 - 9->303->1557744709->2 -> 2018-2019 -> 0->21
+OOD201->Thiết kế hệ thống hướng đối tượng->Lý thuyết->3->16CT->45->Lê Thị Mỹ Hạnh->Thứ Hai->Chiều->6 - 9->303->1557744709->2 -> 2018-2019 -> 0->21
+OOD201->Thiết kế hệ thống hướng đối tượng->Lý thuyết->3->16CT->45->Lê Thị Mỹ Hạnh->Thứ Hai->Chiều->6 - 9->502->1555930309->2 -> 2018-2019 -> 0->31
+OOD201->Thiết kế hệ thống hướng đối tượng->Lý thuyết->3->16CT->45->Lê Thị Mỹ Hạnh->Thứ Hai->Chiều->6 - 9->502->1557139909->2 -> 2018-2019 -> 0->36
+OOD201->Thiết kế hệ thống hướng đối tượng->Lý thuyết->3->16CT->45->Lê Thị Mỹ Hạnh->Thứ Hai->Chiều->6 - 9->502->1557399109->2 -> 2018-2019 -> 0->36
+OOD201->Thiết kế hệ thống hướng đối tượng->Lý thuyết->3->16CT->45->Lê Thị Mỹ Hạnh->Thứ Tư->Sáng->  1 - 4->507->1555498309->2 -> 2018-2019 -> 0->37
+OOD201->Thiết kế hệ thống hướng đối tượng->Lý thuyết->3->16CT->45->Lê Thị Mỹ Hạnh->Thứ Tư->Sáng->  1 - 4->503->1556794309->2 -> 2018-2019 -> 0->38
+OOD201->Thiết kế hệ thống hướng đối tượng->Lý thuyết->3->16CT->45->Lê Thị Mỹ Hạnh->Thứ Bảy->Sáng-> 1 - 4->503->1556967109->2 -> 2018-2019 -> 0->39
+OOD201->Thiết kế hệ thống hướng đối tượng->Lý thuyết->3->16CT->45->Lê Thị Mỹ Hạnh->Thứ Năm->Sáng-> 1 - 4->503->1555584709->2 -> 2018-2019 -> 0->40
+
+
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 9->605->1547549509->2 -> 2018-2019 -> 0->23
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 9->605->1550573509->2 -> 2018-2019 -> 0->28
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 9->605->1551178309->2 -> 2018-2019 -> 0->29
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 9->605->1551783109->2 -> 2018-2019 -> 0->30
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 9->605->1552387909->2 -> 2018-2019 -> 0->31
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 9->605->1552992709->2 -> 2018-2019 -> 0->32
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 9->605->1553597509->2 -> 2018-2019 -> 0->33
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 9->605->1555411909->2 -> 2018-2019 -> 0->34
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 10->605->1556016709->2 -> 2018-2019 -> 0->36
+AFI201->Trí tuệ nhân tạo->Lý thuyết->3->16CT->45->Đỗ Phúc Hảo->Thứ Ba->Chiều->6 - 9->301->1557226309->2 -> 2018-2019 -> 0->39
+
+
+
+ISD201->Phân tích và thiết kế hệ thống thông tin->Lý thuyết->3->16CT->45->Nguyễn Văn Hưng->Thứ Tư->Chiều->6 - 9->402->1555671109->2 -> 2018-2019 -> 0->33
+ISD201->Phân tích và thiết kế hệ thống thông tin->Lý thuyết->3->16CT->45->Nguyễn Văn Hưng->Thứ Tư->Chiều->6 - 9->402->1554306004->2 -> 2018-2019 -> 0->34
+ISD201->Phân tích và thiết kế hệ thống thông tin->Lý thuyết->3->16CT->45->Nguyễn Văn Hưng->Thứ Tư->Sáng->6 - 9->609->1554478804->2 -> 2018-2019 -> 0->34
+ISD201->Phân tích và thiết kế hệ thống thông tin->Lý thuyết->3->16CT->45->Nguyễn Văn Hưng->Thứ Tư->Chiều->6 - 9->609->1555515604->2 -> 2018-2019 -> 0->36
+ISD201->Phân tích và thiết kế hệ thống thông tin->Lý thuyết->3->16CT->45->Nguyễn Văn Hưng->Thứ Sáu->Sáng->1 - 4->406->1555688404->2 -> 2018-2019 -> 0->36
+ISD201->Phân tích và thiết kế hệ thống thông tin->Lý thuyết->3->16CT->45->Nguyễn Văn Hưng->Thứ Tư->Sáng->1 - 4->406->1556120404->2 -> 2018-2019 -> 0->37
+ISD201->Phân tích và thiết kế hệ thống thông tin->Lý thuyết->3->16CT->45->Nguyễn Văn Hưng->Thứ Sáu->Sáng->1 - 4->406->1556293204->2 -> 2018-2019 -> 0->37
+ISD201->Phân tích và thiết kế hệ thống thông tin->Lý thuyết->3->16CT->45->Nguyễn Văn Hưng->Thứ Bảy->Sáng->1 - 5->308->1557589204->2 -> 2018-2019 -> 0->39
+
+MIP201->Vi xử lý->Lý thuyết->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->1 - 4->207->1546512709->2 -> 2018-2019 -> 0 ->21
+MIP201->Vi xử lý->Lý thuyết->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->1 - 4->207->1547722309->2 -> 2018-2019 -> 0->23
+MIP201->Vi xử lý->Lý thuyết->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->1 - 4->207->1548327109->2 -> 2018-2019 -> 0->24
+MIP201->Vi xử lý->Lý thuyết->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->1 - 5->207->1551351109->2 -> 2018-2019 -> 0->28
+MIP201->Vi xử lý->Lý thuyết->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->1 - 5->207->1551955909->2 -> 2018-2019 -> 0->29
+MIP201->Vi xử lý->Lý thuyết->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->1 - 5->207->1552560709->2 -> 2018-2019 -> 0->30
+MIP201->Vi xử lý->Lý thuyết->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->1 - 5->207->1553165509->2 -> 2018-2019 -> 0->31
+MIP201->Vi xử lý->Lý thuyết->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->1 - 5->207->1553770309->2 -> 2018-2019 -> 0->32
+MIP201->Vi xử lý->Lý thuyết->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Sáu->Chiều->6 - 9->210->1558090309->2 -> 2018-2019 -> 0->33
+
+
+
+
+SH0006->Sinh hoạt lớp HK6->Lý thuyết->0->16CT->5->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->5 - 5->207->1547722309->2 -> 2018-2019 -> 0->23
+SH0006->Sinh hoạt lớp HK6->Lý thuyết->0->16CT->5->Nguyễn Thị Vũ Thảo->Thứ Năm->Sáng->5 - 5->207->1550746309->2 -> 2018-2019 -> 0->28
+
+
+SYP202->Đồ án lập trình hệ thống->Thực hành->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Chiều->6 - 10->208->1551955909->2 -> 2018-2019 -> 0->30
+SYP202->Đồ án lập trình hệ thống->Thực hành->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Chiều->6 - 10->208->1552560709->2 -> 2018-2019 -> 0->31
+SYP202->Đồ án lập trình hệ thống->Thực hành->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Chiều->6 - 10->208->1553165509->2 -> 2018-2019 -> 0->32
+SYP202->Đồ án lập trình hệ thống->Thực hành->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Chiều->6 - 10->208->1553770309->2 -> 2018-2019 -> 0->33
+SYP202->Đồ án lập trình hệ thống->Thực hành->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Chiều->6 - 10->208->1554375109->2 -> 2018-2019 -> 0->34
+SYP202->Đồ án lập trình hệ thống->Thực hành->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Chiều->6 - 10->208->1555584709->2 -> 2018-2019 -> 0->36
+SYP202->Đồ án lập trình hệ thống->Thực hành->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Chiều->6 - 10->208->1556189509->2 -> 2018-2019 -> 0->37
+SYP202->Đồ án lập trình hệ thống->Thực hành->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Chiều->6 - 10->208->1556794309->2 -> 2018-2019 -> 0->38
+SYP202->Đồ án lập trình hệ thống->Thực hành->3->16CT->45->Nguyễn Thị Vũ Thảo->Thứ Năm->Chiều->6 - 10->208->1557399109->2 -> 2018-2019 -> 0->39
+
+
+
+
+
+
+
+
+
+
+
+
+
+

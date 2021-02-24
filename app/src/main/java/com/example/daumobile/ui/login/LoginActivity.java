@@ -35,9 +35,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         //add data
-//        FileService.readPoint(this);
-//        FileService.readProgram(this);
-//        FileService.readSchedule(this);
+//        FileService.getInstance(this).readPoint(this);
+//        FileService.getInstance(this).readProgram(this);
+//        FileService.getInstance(this).readSchedule(this);
+//        FileService.getInstance(this).readTestSchedule(this);
 
         mFirebaseManager = FirebaseManager.getInstance(this);
         setListeners();

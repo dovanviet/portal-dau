@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.example.daumobile.callbacks.IListenerItemClicked;
+import com.example.daumobile.database.Constants;
 import com.example.daumobile.databinding.ItemScheduleBinding;
 import com.example.daumobile.model.Schedule;
 import com.example.daumobile.utils.DateUtils;
@@ -22,11 +23,13 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     private final DateUtils dateUtils;
     private final ViewBinderHelper mBinderHelper;
     private Boolean isSwipe = false;
+    private String type = Constants.THOI_KHOA_BIEU;
 
-    public ScheduleAdapter(@NonNull List<Schedule> list, IListenerItemClicked listener, Boolean isSwipe) {
+    public ScheduleAdapter(@NonNull List<Schedule> list, IListenerItemClicked listener, Boolean isSwipe, String type) {
         currentList = list;
         mListener = listener;
         this.isSwipe = isSwipe;
+        this.type = type;
 
         dateUtils = DateUtils.getInstance();
         mBinderHelper = new ViewBinderHelper();
@@ -102,12 +105,21 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
         }
 
         public void bindData(Schedule schedule) {
-            String time = schedule.getThoiGianDayTrongTuan() + ", " + dateUtils.formatFullDate(schedule.getThoiGian());
-            String address = "Phòng " + schedule.getPhong() +"Tiết " + schedule.getTiet();
-            binding.tvThoiGian.setText(time);
-            binding.tvDiaDiem.setText(address);
-            binding.tvTenMonHoc.setText(schedule.getTenHP());
-            binding.tvTenGiangVien.setText(schedule.getTenGiangVien());
+            if (type.equals(Constants.THOI_KHOA_BIEU)) {
+                String time = schedule.getThoiGianDayTrongTuan() + ", " + dateUtils.formatFullDate(schedule.getThoiGian());
+                String address = "Phòng " + schedule.getPhong() +", Tiết " + schedule.getTiet();
+                binding.tvThoiGian.setText(time);
+                binding.tvDiaDiem.setText(address);
+                binding.tvTenMonHoc.setText(schedule.getTenHP());
+                binding.tvTenGiangVien.setText(schedule.getTenGiangVien());
+            } else {
+                String time = dateUtils.formatFullDate(schedule.getThoiGian());
+                String address = schedule.getTiet();
+                binding.tvThoiGian.setText(time);
+                binding.tvDiaDiem.setText(address);
+                binding.tvTenMonHoc.setText(schedule.getTenHP());
+                binding.tvTenGiangVien.setText("Phòng " +schedule.getPhong());
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ package com.example.daumobile.ui.schedule;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -93,9 +94,14 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
         mSchedulers = new ArrayList<>();
         mCurrentSchedulers = new ArrayList<>();
         if (mUser instanceof Student) {
-            mAdapter = new ScheduleAdapter(mCurrentSchedulers, this, false);
+            mAdapter = new ScheduleAdapter(mCurrentSchedulers, this, false, mTypeOfSchedule);
         } else {
-            mAdapter = new ScheduleAdapter(mCurrentSchedulers, this, true);
+            mAdapter = new ScheduleAdapter(mCurrentSchedulers, this, true, mTypeOfSchedule);
+        }
+
+        if (mTypeOfSchedule.equals(Constants.LICH_THI)) {
+            binding.btnWeek.setVisibility(View.GONE);
+            binding.tvWeekValue.setVisibility(View.GONE);
         }
 
         binding.recyclerviewSchedule.setAdapter(mAdapter);
@@ -118,8 +124,9 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
             for (Schedule schedule : schedulers) {
                 if (mTypeOfSchedule.equals(Constants.THOI_KHOA_BIEU) && mUser instanceof Student && schedule.getLopHoc().toLowerCase().contains(((Student) mUser).getLopHoc().toLowerCase())) {
                     mSchedulers.add(schedule);
-                } else if (mTypeOfSchedule.equals(Constants.LICH_THI)) {
-                    // NOTHING
+                } else if (mTypeOfSchedule.equals(Constants.LICH_THI) && mUser instanceof Student && schedule.getLopHoc().toLowerCase().contains(((Student) mUser).getLopHoc().toLowerCase()) &&
+                        schedule.getLoaiHP().isEmpty()) {
+                    mSchedulers.add(schedule);
                 } else if (mTypeOfSchedule.equals(Constants.LICH_DAY) && mUser instanceof Teacher && schedule.getTenGiangVien().toLowerCase().equals(mUser.getName().toLowerCase())) {
                     mSchedulers.add(schedule);
                 }
@@ -169,8 +176,15 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
 
         mCurrentSchedulers.clear();
 
-        for(Schedule schedule : mSchedulers) {
-            if (schedule.getNam().equals(year) && schedule.getTuan() == week && Integer.parseInt(schedule.getHocky()) == semester) {
+        for (Schedule schedule : mSchedulers) {
+            Log.d(TAG, "updateData: 1 :" + schedule.getNam() + " - " + year);
+            Log.d(TAG, "updateData: 2 :" + schedule.getHocky() + " - " + semester);
+            if (mTypeOfSchedule.equals(Constants.LICH_THI) && mUser instanceof Student &&
+                    schedule.getLopHoc().toLowerCase().contains(((Student) mUser).getLopHoc().toLowerCase()) &&
+                    schedule.getLoaiHP().isEmpty() &&
+                    schedule.getNam().equals(year) && Integer.parseInt(schedule.getHocky()) == semester) {
+                mCurrentSchedulers.add(schedule);
+            } else if (schedule.getNam().equals(year) && schedule.getTuan() == week && Integer.parseInt(schedule.getHocky()) == semester) {
                 mCurrentSchedulers.add(schedule);
             }
         }

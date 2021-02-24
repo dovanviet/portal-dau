@@ -53,7 +53,8 @@ public class PointActivity extends AppCompatActivity implements IListenerItemCli
     private void setViews() {
         mFirebaseManager = FirebaseManager.getInstance(this);
         mPoints = new ArrayList<>();
-        mAdapter = new PointAdapter(this, mPoints, this);
+        mCurrentPoints = new ArrayList<>();
+        mAdapter = new PointAdapter(this, mCurrentPoints, this);
 
         binding.recyclerviewPoint.setAdapter(mAdapter);
         binding.recyclerviewPoint.setLayoutManager(new LinearLayoutManager(this));

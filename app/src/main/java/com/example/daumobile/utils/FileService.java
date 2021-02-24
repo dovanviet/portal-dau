@@ -135,13 +135,62 @@ public class FileService {
                 if (!tamDung.equals("0")) {
                     tamdungB = true;
                 }
-                long thoiGianI = System.currentTimeMillis();
+                long thoiGianI = Integer.parseInt(thoiGian);
+                Log.d(TAG, "readSchedule: maHP = " + maHP + " thoigian = " + thoiGianI);
                 int soTietI = Integer.parseInt(soTiet);
                 int soTinChiI = Integer.parseInt(stc);
                 int tuanI = Integer.parseInt(tuan);
 
                 //String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, int thoiGian, String buoi, String tiet, boolean tamdung
                 Schedule schedule = new Schedule(maHP, tenHP, loaiHP, soTinChiI, lopHoc, soTietI, giangVien, ngayHoc, thoiGianI, buoi, tiet, tamdungB, hocKy, nam, phong,tuanI);
+                mFirebaseManager.addSchedule(schedule);
+            }
+        } catch (IOException e) {
+            //log the exception
+        }
+    }
+
+    public void readTestSchedule(Context context) {
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(context.getAssets().open("lichthi.dat"), "UTF-8"))) {
+
+            //Mã lớp HP -> Tên học phần-> Loại học phần ->STC-> lớp học -> số tiết -> giảng viên -> ngày học -> buổi -> tiết -> phòng -> thời gian -> học kỳ -> Năm -> tạm dừng
+            String mLine;
+            while ((mLine = reader.readLine()) != null) {
+                if (mLine.trim().startsWith("//")  || mLine.isEmpty()) {
+                    continue;
+                }
+                String[] splits = mLine.split("->");
+
+                Log.d(TAG, "readSchedule: " + splits[0] + " - " + splits[1]);
+
+                String maHP = splits[0].trim();
+                String tenHP = splits[1].trim();
+                String loaiHP = splits[2].trim();
+                String stc = splits[3].trim();
+                String lopHoc = splits[4].trim();
+                String soTiet = splits[5].trim();
+                String giangVien = splits[6].trim();
+                String ngayHoc = splits[7].trim();
+                String buoi = splits[8].trim();
+                String tiet = splits[9].trim();
+                String phong = splits[10].trim();
+                String thoiGian = splits[11].trim();
+                String hocKy = splits[12].trim();
+                String nam = splits[13].trim();
+                String tamDung = splits[14].trim();
+
+                boolean tamdungB = false;
+                if (!tamDung.equals("0")) {
+                    tamdungB = false;
+                }
+                long thoiGianI = Integer.parseInt(thoiGian);
+//                int soTietI = Integer.parseInt(soTiet);
+//                int soTinChiI = Integer.parseInt(stc);
+//                int tuanI = Integer.parseInt(tuan);
+
+                //String maHP, String tenHP, String loaiHP, int soTinChi, String lopHoc, int soTiet, String tenGiangVien, String thoiGianDayTrongTuan, int thoiGian, String buoi, String tiet, boolean tamdung
+                Schedule schedule = new Schedule(maHP, tenHP, loaiHP, 0, lopHoc, 0, giangVien, ngayHoc, thoiGianI, buoi, tiet, tamdungB, hocKy, nam, phong,0);
                 mFirebaseManager.addSchedule(schedule);
             }
         } catch (IOException e) {

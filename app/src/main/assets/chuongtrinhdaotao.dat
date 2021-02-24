@@ -1,10 +1,86 @@
 //STT->	Tên chương trình đào tạo->	Mã học phần	->Tên học phần->	Loại học phần->	ĐVHT/STC  -> học kỳ -> Năm
-1->	16CT->	CPL201->	Chương trình dịch->	Bắt Buộc->	3 ->1 ->2018-2019
-2->	16CT->	SWE201->	Công nghệ phần mềm->	Bắt Buộc->	3->1 ->2018-2019
-3->	16CT->	RCV101->	Đường lối Cách mạng của Đảng Cộng Sản Việt Nam->	Bắt Buộc->	3	->1 ->2018-2019
-4->	16CT->	PHE105->	Giáo dục thể chất 5	-> Bắt Buộc->	1	->1 ->2018-2019
-5->	16CT->	DMS201->	Hệ quản trị cơ sở dữ liệu->	Bắt Buộc->	3	->1 ->2018-2019
-6->	16CT->	SYP201->	Lập trình hệ thống->	Bắt Buộc->	3	->1 ->2018-2019
-7->	16CT->	WEB201->	Lập trình Web->	Bắt Buộc->	3	->1 ->2018-2019
-8->	16CT->	CPN201->	Mạng máy tính->	Bắt Buộc->	3	->1 ->2018-2019
-9->	16CT->	SH0005->	Sinh hoạt lớp HK5->	Bắt Buộc->	0	->1 ->2018-2019
+
+1->16CT->CAL101->Giải tích 1->Bắt Buộc->3-> 1 ->2016-2017
+2->16CT->EDS101->Giáo dục quốc phòng 1->Bắt Buộc->3-> 1 ->2016-2017
+3->16CT->EDS102->Giáo dục quốc phòng 2->Bắt Buộc->2-> 1 ->2016-2017
+4->16CT->EDS103->Giáo dục quốc phòng 3->Bắt Buộc->3-> 1 ->2016-2017
+5->16CT->PHE101->Giáo dục thể chất 1->Bắt Buộc->1-> 1 ->2016-2017
+6->16CT->SSK101->Kỹ năng mềm->Bắt Buộc->2->  1 ->2016-2017
+7->16CT->LAW101->Pháp luật đại cương->Bắt Buộc->2->  1 ->2016-2017
+8->16CT->SH0001->Sinh hoạt lớp HK1->Bắt Buộc->0->  1 ->2016-2017
+9->16CT->GNE101->Tiếng anh cơ bản 1->Bắt Buộc->3->  1 ->2016-2017
+10->16CT->INF101->Tin học đại cương->Bắt Buộc->3->  1 ->2016-2017
+11->16CT->PHY101->Vật lý->Bắt Buộc->3->  1 ->2016-2017
+
+1->16CT->AGR101->Đại số->Bắt Buộc->2-> 2 ->2016-2017
+2->16CT->CAL102->Giải tích 2->Bắt Buộc->2->2 ->2016-2017
+3->16CT->PHE102->Giáo dục thể chất 2->Bắt Buộc->1->2 ->2016-2017
+4->16CT->CPL101->Ngôn ngữ lập trình C->Bắt Buộc->4->2 ->2016-2017
+5->16CT->PML101->Những nguyên lý cơ bản của chủ nghĩa Mác - Lênin 1->Bắt Buộc->3->2 ->2016-2017
+6->16CT->RSM102->Phương pháp nghiên cứu khoa học khối kỹ thuật->Bắt Buộc->2->2 ->2016-2017
+7->16CT->SH0002->Sinh hoạt lớp HK2->Bắt Buộc->0->2 ->2016-2017
+8->16CT->GNE102->Tiếng anh cơ bản 2->Bắt Buộc->3->2 ->2016-2017
+
+1->16CT->DTS201->Cấu trúc dữ liệu->Bắt Buộc->3->1 ->2017-2018
+2->16CT->PHE103->Giáo dục thể chất 3->Bắt Buộc->1->1 ->2017-2018
+3->16CT->ELE101->Kĩ thuật điện tử->Bắt Buộc->2->1 ->2017-2018
+4->16CT->COS201->Kiến trúc máy tính->Bắt Buộc->3->1 ->2017-2018
+5->16CT->OOP201->Lập trình hướng đối tượng->Bắt Buộc->3->1 ->2017-2018
+6->16CT->PML102->Những nguyên lý cơ bản của chủ nghĩa Mác - Lênin 2->Bắt Buộc->2->1 ->2017-2018
+7->16CT->SH0003->Sinh hoạt lớp HK3->Bắt Buộc->0->1 ->2017-2018
+8->16CT->GNE103->Tiếng anh cơ bản 3->Bắt Buộc->2->1 ->2017-2018
+9->16CT->DCM201->Toán rời rạc->Bắt Buộc->3->1 ->2017-2018
+10->16CT->PMS102->Xác suất và Thống kê->Bắt Buộc->2->1 ->2017-2018
+
+1->16CT->DBS201->Cơ sở dữ liệu->Bắt Buộc->3->2 ->2017-2018
+2->16CT->AAD202->Đồ án giải thuật và lập trình->Bắt Buộc->3->2 ->2017-2018
+3->16CT->PHE104->Giáo dục thể chất 4->Bắt Buộc->1->2 ->2017-2018
+4->16CT->OPS201->Hệ điều hành->Bắt Buộc->3->2 ->2017-2018
+5->16CT->BJP201->Lập trình JAVA cơ bản->Bắt Buộc->4->2 ->2017-2018
+6->16CT->FLA201->Ngôn ngữ hình thức và ôtômát->Bắt Buộc->3->2 ->2017-2018
+7->16CT->AAD201->Phân tích và thiết kế giải thuật->Bắt Buộc->3->2 ->2017-2018
+8->16CT->SH0004->Sinh hoạt lớp HK4->Bắt Buộc->0->2 ->2017-2018
+9->16CT->HCM101->Tư tưởng Hồ Chí Minh->Bắt Buộc->2->2 ->2017-2018
+
+
+1->16CT->CPL201->Chương trình dịch->Bắt Buộc->3 ->1 ->2018-2019
+2->16CT->SWE201->Công nghệ phần mềm->Bắt Buộc->3->1 ->2018-2019
+3->16CT->RCV101->Đường lối Cách mạng của Đảng Cộng Sản Việt Nam->Bắt Buộc->3->1 ->2018-2019
+4->16CT->PHE105->Giáo dục thể chất 5-> Bắt Buộc->1->1 ->2018-2019
+5->16CT->DMS201->Hệ quản trị cơ sở dữ liệu->Bắt Buộc->3->1 ->2018-2019
+6->16CT->SYP201->Lập trình hệ thống->Bắt Buộc->3->1 ->2018-2019
+7->16CT->WEB201->Lập trình Web->Bắt Buộc->3->1 ->2018-2019
+8->16CT->CPN201->Mạng máy tính->Bắt Buộc->3->1 ->2018-2019
+9->16CT->SH0005->Sinh hoạt lớp HK5->Bắt Buộc->0->1 ->2018-2019
+
+1->16CT->SYP202->Đồ án lập trình hệ thống->Bắt Buộc->3->2 ->2018-2019
+2->16CT->ISD201->Phân tích và thiết kế hệ thống thông tin->Bắt Buộc->3->2 ->2018-2019
+3->16CT->SH0006->Sinh hoạt lớp HK6->Bắt Buộc->0->2 ->2018-2019
+4->16CT->OOD201->Thiết kế hệ thống hướng đối tượng->Bắt Buộc->3->2 ->2018-2019
+5->16CT->PRT201->Thực tập nghề nghiệp->Bắt Buộc->2->2 ->2018-2019
+6->16CT->ENG201->Tiếng Anh chuyên ngành công nghệ thông tin->Bắt Buộc->2->2->2018-2019
+7->16CT->AFI201->Trí tuệ nhân tạo->Bắt Buộc->3->2 ->2018-2019
+8->16CT->MIP201->Vi xử lý->Bắt Buộc->3->2 ->2018-2019
+
+
+1->16CT->WEB202->Công nghệ WEB->Tự Chọn->3->1 ->2019-2020
+2->16CT->ISD202->Đồ án phân tích và thiết kế hệ thống thông tin->Bắt Buộc->3->1 ->2019-2020
+3->16CT->SOT301->Kiểm thử phần mềm->Bắt Buộc->3->1 ->2019-2020
+4->16CT->MOB201->Lập trình di động->Tự Chọn->3->1 ->2019-2020
+5->16CT->AJP201->Lập trình Java nâng cao->Tự Chọn->3->1 ->2019-2020
+6->16CT->PRW201->Lập trình trong windows->Tự Chọn->3->1 ->2019-2020
+7->16CT->PRM301->Quản lý dự án->Bắt Buộc->3->1 ->2019-2020
+8->16CT->SH0007->Sinh hoạt lớp HK7->Bắt Buộc->0->1 ->2019-2020
+
+1->16CT->SOP301->Đồ án chuyên ngành công nghệ phần mềm->Bắt Buộc->2->2 ->2019-2020
+2->16CT->LIO301->Linux và phần mềm nguồn mở->Bắt Buộc->3->2->2 ->2019-2020
+3->16CT->SH0008->Sinh hoạt lớp HK8->Bắt Buộc->0->2->2 ->2019-2020
+4->16CT->ECO301->Thương mại điện tử->Tự Chọn->3->2->2 ->2019-2020
+5->16CT->HCI301->Tương tác người- máy->Tự Chọn->3->2->2 ->2019-2020
+
+1->16CT->FIP401->Đồ án tốt nghiệp->Bắt Buộc->10->2->1 ->2020-2021
+2->16CT->SH0009->Sinh hoạt lớp HK9->Bắt Buộc->0->1 ->2020-2021
+3->16CT->INT403->Thực tập tốt nghiệp->Bắt Buộc->3->1 ->2020-2021
+
+
+
