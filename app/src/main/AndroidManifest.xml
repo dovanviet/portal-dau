@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.point.PointActivity"></activity>
+        <activity android:name=".ui.user.UserActivity" />
+        <activity android:name=".ui.point.PointActivity" />
         <activity android:name=".ui.program.ProgramActivity" />
         <activity android:name=".ui.schedule.ScheduleActivity" />
         <activity
@@ -25,10 +27,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".ui.user.UserActivity" />
         <activity android:name=".ui.home.HomeActivity" />
+
+        <receiver
+            android:name=".service.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>

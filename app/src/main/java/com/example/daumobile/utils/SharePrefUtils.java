@@ -51,4 +51,12 @@ public class SharePrefUtils {
     public int getWeek() {
         return Prefs.getInt(Constants.PREF_WEEK, 1);
     }
+
+    public void saveClassStudent(String _class) { Prefs.putString(Constants.PREF_CLASS, _class);}
+
+    public String getClassStudent() { return Prefs.getString(Constants.PREF_CLASS, "");}
+
+    public void setIsDestroy(Boolean isDestroy) { Prefs.putBoolean(Constants.PREF_DESTROY, isDestroy);}
+
+    public Boolean isDestroy() { return Prefs.getBoolean(Constants.PREF_DESTROY, true);}
 }

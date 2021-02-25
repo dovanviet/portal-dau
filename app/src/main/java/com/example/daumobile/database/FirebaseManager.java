@@ -13,6 +13,7 @@ import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
 import com.example.daumobile.model.authen.Teacher;
 import com.example.daumobile.utils.NotifyUtils;
+import com.example.daumobile.utils.SharePrefUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +29,7 @@ public class FirebaseManager {
     private static FirebaseManager mInstance = null;
 
     private NotifyUtils mNotifyInstance;
+    private SharePrefUtils mSharePrefInstance;
 
     private final DatabaseReference mUserFref;
     private final DatabaseReference mScheduleFref;
@@ -63,6 +65,7 @@ public class FirebaseManager {
         mProgramFref    = database.getReference("program");
 
         mNotifyInstance = NotifyUtils.getInstance(context);
+        mSharePrefInstance = SharePrefUtils.getInstance(context);
 //        initData();
         onListenUserValue();
     }
@@ -183,7 +186,10 @@ public class FirebaseManager {
                     Schedule schedule = postSnapshot.getValue(Schedule.class);
 
                     if (schedule != null && schedule.isTamdung()) {
-                        mNotifyInstance.showNotifyNow("Thông báo", "Môn học " + schedule.getTenHP() + " đã tạm dừng");
+                        if (schedule.getLopHoc().equals(mSharePrefInstance.getClassStudent())) {
+                            mNotifyInstance.showNotifyNow("Thông báo", "Môn học " + schedule.getTenHP() + " đã tạm dừng");
+                        }
+
                         postSnapshot.getRef().removeValue();
                     } else {
                         results.add(schedule);

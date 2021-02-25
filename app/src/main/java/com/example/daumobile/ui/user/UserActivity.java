@@ -2,31 +2,22 @@ package com.example.daumobile.ui.user;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.view.LayoutInflater;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import com.bumptech.glide.Glide;
 import com.example.daumobile.database.Constants;
-import com.example.daumobile.databinding.ActivityProgramBinding;
 import com.example.daumobile.databinding.ActivityUserBinding;
 import com.example.daumobile.model.authen.PEOPLE_TYPE;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.authen.Student;
 import com.example.daumobile.model.authen.Teacher;
-import com.example.daumobile.ui.base.BaseActivity;
-
 
 public class UserActivity extends AppCompatActivity {
     private ActivityUserBinding binding;
     private People mUser;
-
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         binding = ActivityUserBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -44,6 +35,7 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void setViews() {
+        binding.tvValueName.setText(mUser.getName());
         binding.tvValueAddress.setText(mUser.getAddress());
         binding.tvValueCode.setText(mUser.getId());
         binding.tvValueNumberPhone.setText(mUser.getNumberphone());

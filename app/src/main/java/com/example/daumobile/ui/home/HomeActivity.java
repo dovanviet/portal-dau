@@ -3,14 +3,13 @@ package com.example.daumobile.ui.home;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 
-import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
 import com.example.daumobile.database.Constants;
 import com.example.daumobile.databinding.ActivityHomeBinding;
-import com.example.daumobile.model.Program;
 import com.example.daumobile.model.authen.PEOPLE_TYPE;
 import com.example.daumobile.model.authen.People;
 import com.example.daumobile.model.home.HomeItem;
@@ -22,6 +21,8 @@ import com.example.daumobile.ui.login.LoginActivity;
 import com.example.daumobile.ui.point.PointActivity;
 import com.example.daumobile.ui.program.ProgramActivity;
 import com.example.daumobile.ui.schedule.ScheduleActivity;
+import com.example.daumobile.ui.user.UserActivity;
+import com.example.daumobile.utils.SharePrefUtils;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ import java.util.List;
 
 public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements IListenerItemClicked {
 
+    private static final String CHANNEL_DEFAULT_IMPORTANCE = "NOTIFY";
     private com.example.daumobile.databinding.ActivityHomeBinding binding;
 
     private HomeAdapter mHomeAdapter;
@@ -53,6 +55,12 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
         generateData();
         setViews();
         setListeners();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharePrefUtils.getInstance(this).setIsDestroy(true);
     }
 
     private void receiveData() {
@@ -117,9 +125,7 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
         binding.recyclerHome.setHasFixedSize(true);
     }
 
-    private void setListeners() {
-
-    }
+    private void setListeners() { }
 
     @Override
     public void onItemClicked(HomeItem item) {
@@ -153,7 +159,11 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding> implements I
                 intent.putExtra(Constants.IT_PEOPLE, currentPeople);
                 intent.putExtra(Constants.IT_SCHEDULE, Constants.THOI_KHOA_BIEU);
                 startActivity(intent);
+                break;
             case Constants.MENU_THONGTINCANHAN:
+                intent = new Intent(this, UserActivity.class);
+                intent.putExtra(Constants.IT_PEOPLE, currentPeople);
+                startActivity(intent);
                 break;
             case Constants.MENU_XEMDIEM:
                 intent = new Intent(this, PointActivity.class);

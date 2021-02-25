@@ -14,8 +14,11 @@ import com.example.daumobile.databinding.ActivityLoginBinding;
 import com.example.daumobile.model.Point;
 import com.example.daumobile.model.authen.PEOPLE_TYPE;
 import com.example.daumobile.model.authen.People;
+import com.example.daumobile.model.authen.Student;
 import com.example.daumobile.ui.home.HomeActivity;
 import com.example.daumobile.utils.FileService;
+import com.example.daumobile.utils.SharePrefUtils;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 //        FileService.getInstance(this).readTestSchedule(this);
 
         mFirebaseManager = FirebaseManager.getInstance(this);
+        SharePrefUtils.getInstance(this).setIsDestroy(false);
         setListeners();
     }
 
@@ -72,6 +76,10 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show();
                 binding.edtPassword.requestFocus();
             } else if (peopleFound != null) {
+                if (peopleFound instanceof Student) {
+                    SharePrefUtils.getInstance(this).saveClassStudent(((Student) peopleFound).getLopHoc());
+                }
+
                 Intent intent = new Intent(this, HomeActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra(Constants.IT_PEOPLE, peopleFound);

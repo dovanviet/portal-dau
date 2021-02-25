@@ -24,6 +24,9 @@ import com.example.daumobile.utils.SharePrefUtils;
 import com.example.daumobile.utils.Utility;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -99,7 +102,7 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
             mAdapter = new ScheduleAdapter(mCurrentSchedulers, this, true, mTypeOfSchedule);
         }
 
-        if (mTypeOfSchedule.equals(Constants.LICH_THI)) {
+        if (mTypeOfSchedule.equals(Constants.LICH_THI) || mTypeOfSchedule.equals(Constants.LICH_DAY)) {
             binding.btnWeek.setVisibility(View.GONE);
             binding.tvWeekValue.setVisibility(View.GONE);
         }
@@ -119,6 +122,7 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
 
     private void setListeners() {
         mFirebaseManager.getScheduleData().observe(this, schedulers -> {
+            Collections.sort(schedulers, (schedule, t1) -> (int) (t1.getThoiGian() - schedule.getThoiGian()));
             mSchedulers.clear();
 
             for (Schedule schedule : schedulers) {
@@ -132,8 +136,6 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
                 }
             }
             updateData();
-            Log.d(TAG, "setListeners: 2 ???? " + mSchedulers.size());
-//            mAdapter.updateList(mSchedulers);
         });
 
         binding.btnWeek.setOnClickListener(v -> {
@@ -159,8 +161,17 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
                     String year = years.get(selectedIndex);
                     int semester = semesters.get(selectedSemesterIndex);
 
+
+                    if (semester != mSharePrefs.getSemester() && semester == 1) {
+                        mSharePrefs.saveWeek(1);
+                    } else if (semester != mSharePrefs.getSemester() && semester == 2){
+                        mSharePrefs.saveWeek(21);
+                    } else if (semester != mSharePrefs.getSemester() && semester == 3){
+                        mSharePrefs.saveWeek(44);
+                    }
                     mSharePrefs.saveSemester(semester);
                     mSharePrefs.saveYear(year);
+                    binding.tvWeekValue.setText("Tuần " + mSharePrefs.getWeek());
 
                     binding.tvTime.setText(year + " / HK" + semester);
                     updateData();
@@ -177,12 +188,12 @@ public class ScheduleActivity extends AppCompatActivity implements IListenerItem
         mCurrentSchedulers.clear();
 
         for (Schedule schedule : mSchedulers) {
-            Log.d(TAG, "updateData: 1 :" + schedule.getNam() + " - " + year);
-            Log.d(TAG, "updateData: 2 :" + schedule.getHocky() + " - " + semester);
             if (mTypeOfSchedule.equals(Constants.LICH_THI) && mUser instanceof Student &&
                     schedule.getLopHoc().toLowerCase().contains(((Student) mUser).getLopHoc().toLowerCase()) &&
                     schedule.getLoaiHP().isEmpty() &&
                     schedule.getNam().equals(year) && Integer.parseInt(schedule.getHocky()) == semester) {
+                mCurrentSchedulers.add(schedule);
+            } else if (mTypeOfSchedule.equals(Constants.LICH_DAY) && mUser instanceof Teacher && schedule.getNam().equals(year) && Integer.parseInt(schedule.getHocky()) == semester) {
                 mCurrentSchedulers.add(schedule);
             } else if (schedule.getNam().equals(year) && schedule.getTuan() == week && Integer.parseInt(schedule.getHocky()) == semester) {
                 mCurrentSchedulers.add(schedule);

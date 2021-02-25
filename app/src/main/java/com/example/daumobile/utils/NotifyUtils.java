@@ -1,5 +1,6 @@
 package com.example.daumobile.utils;
 
+import android.app.AlarmManager;
 import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -14,6 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.example.daumobile.R;
+import com.example.daumobile.database.Constants;
+import com.example.daumobile.service.AlarmReceiver;
 import com.example.daumobile.ui.home.HomeActivity;
 
 public class NotifyUtils {
@@ -34,21 +37,18 @@ public class NotifyUtils {
     }
 
     public void showNotifyNow(String title, String content) {
-        Intent intent = new Intent(mContext, HomeActivity.class);
-        // use System.currentTimeMillis() to have a unique ID for the pending intent
-        PendingIntent pIntent = PendingIntent.getActivity(mContext, (int) System.currentTimeMillis(), intent, 0);
+        AlarmManager alarmManager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
 
-        Notification mBuilder = new NotificationCompat.Builder(mContext, CHANNEL_ID)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle(title)
-                .setContentText(content)
-                .setContentIntent(pIntent)
-                .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .build();
-        NotificationManager notificationManager = (NotificationManager)
-                mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        Intent intent = new Intent(mContext, AlarmReceiver.class);
+        intent.setAction(Constants.BC_NOTIFY);
+        intent.putExtra(Constants.IT_NOTIFY_TITLE, title);
+        intent.putExtra(Constants.IT_NOTIFY_CONTENT, content);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(mContext, 0, intent, 0);
 
-        notificationManager.notify(0, mBuilder);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), pendingIntent);
+        } else {
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), pendingIntent);
+        }
     }
 }

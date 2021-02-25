@@ -27,6 +27,9 @@ public class Constants {
 
     public static final String IT_PEOPLE = "IT_PEOPLE";
     public static final String IT_SCHEDULE = "IT_SCHEDULE";
+    public static final String IT_NOTIFY_TITLE = "IT_NOTIFY_TITLE";
+    public static final String IT_NOTIFY_CONTENT = "IT_NOTIFY_CONTENT";
+    public static final String IT_NOTIFY_SHOULD_SHOW = "IT_NOTIFY_SHOULD_SHOW";
 
     //authen
 //    public static final int GIANG_VIEN = 0;
@@ -52,4 +55,8 @@ public class Constants {
     public static final String PREF_SEMESTER = "PREF_SEMESTER";
     public static final String PREF_WEEK = "PREF_WEEK";
     public static final String PREF_YEAR = "PREF_YEAR";
+    public static final String PREF_CLASS = "PREF_CLASS";
+    public static final String PREF_DESTROY = "PREF_DESTROY";
+
+    public static final String BC_NOTIFY = "BC_NOTIFY";
 }
